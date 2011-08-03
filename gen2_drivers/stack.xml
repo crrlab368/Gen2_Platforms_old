@@ -1,0 +1,9 @@
+<stack>
+  <description brief="crrlab_drivers">crrlab_drivers</description>
+  <author>Maintained by OverKill</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/crrlab_drivers</url>
+  <depend stack="ros" />
+
+</stack>

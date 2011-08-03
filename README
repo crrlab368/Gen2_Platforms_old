@@ -1,0 +1,20 @@
+Generation 2 README
+
+gen2_common--Custom Stack
+	gen2_descritpion--custom pkg
+	gen2_launch--custom pkg
+	teleop_twist_keybaord--pkg
+
+
+gen2_drivers--Custom Stack
+	gen2_motor_driver--custom pkg
+
+rosserial--Stack
+	rosserial_arduino--pkg
+	rosserial_python--pkg
+	OTHER PKGS NOT USED
+
+Arduino Code--Move to sketchbook
+	Subscritption_Publisher_Test--Arduino code
+	libraries--Required for rosserial
+

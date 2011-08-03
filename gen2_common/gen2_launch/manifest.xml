@@ -1,0 +1,15 @@
+<package>
+  <description brief="gen2_launch">
+
+     gen2_launch
+
+  </description>
+  <author>OverKill</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/gen2_launch</url>
+  <depend package="gen2_description"/>
+
+</package>
+
+

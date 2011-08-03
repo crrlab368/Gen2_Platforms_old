@@ -1,0 +1,29 @@
+<launch>
+
+	
+	<!-- Launch the serial node to communicate with the arduino -->
+	<node name="serial_node" pkg="rosserial_python" type="serial_node.py">
+		<!-- Specify USB port connected to arduino -->
+		<param name="port" value="/dev/ttyUSB0" type="str" />
+	</node>
+
+
+	
+	<!-- Launch the motor controller node -->
+	<node name="mot_con_node" pkg="gen2_motor_driver" type="mot_con_node"> 
+		<!-- PID values for right motor -->
+		<param name="right_p" value="6" type="double" />
+		<param name="right_i" value=".5" type="double" />
+		<param name="right_d" value="0" type="double" />
+
+		<!-- PID values for left motor -->
+		<param name="left_p" value="6" type="double" />
+		<param name="left_i" value=".5" type="double" />
+		<param name="left_d" value="0" type="double" />	
+
+		<!-- Set wheel diameter -->
+		<param name ="r_diam" value="36.25" type="double" />
+		<param name ="l_diam" value="36.25" type="double" />
+	</node>
+
+</launch>

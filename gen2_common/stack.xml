@@ -1,0 +1,9 @@
+<stack>
+  <description brief="crrlab_common">crrlab_common</description>
+  <author>Maintained by OverKill</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/crrlab_common</url>
+  <depend stack="ros" />
+
+</stack>
