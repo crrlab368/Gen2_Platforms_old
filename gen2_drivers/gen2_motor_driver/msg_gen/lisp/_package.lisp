@@ -3,9 +3,9 @@
   (:export
    "<PID_PLOT>"
    "PID_PLOT"
-   "<ENCODER_GYRO>"
-   "ENCODER_GYRO"
    "<DRIVE_MSG>"
    "DRIVE_MSG"
+   "<ENCODER_GYRO>"
+   "ENCODER_GYRO"
   ))
 

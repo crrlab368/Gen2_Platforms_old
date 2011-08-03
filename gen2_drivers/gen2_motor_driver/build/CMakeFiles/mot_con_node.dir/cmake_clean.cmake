@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
-  "../src/gen2_motor_driver/msg"
   "../msg_gen"
+  "../src/gen2_motor_driver/msg"
   "../msg_gen"
   "CMakeFiles/mot_con_node.dir/src/mot_con_node.o"
   "../bin/mot_con_node.pdb"
