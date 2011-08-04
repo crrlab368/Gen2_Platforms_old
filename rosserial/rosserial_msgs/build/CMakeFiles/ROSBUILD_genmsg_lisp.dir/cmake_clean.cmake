@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
-  "../src/rosserial_msgs/msg"
   "../msg_gen"
+  "../src/rosserial_msgs/msg"
   "../msg_gen"
   "CMakeFiles/ROSBUILD_genmsg_lisp"
   "../msg_gen/lisp/TopicInfo.lisp"

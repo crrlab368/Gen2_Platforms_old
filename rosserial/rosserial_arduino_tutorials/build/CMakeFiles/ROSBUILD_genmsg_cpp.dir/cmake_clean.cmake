@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
-  "../src/rosserial_arduino_tutorials/msg"
   "../msg_gen"
+  "../src/rosserial_arduino_tutorials/msg"
   "../msg_gen"
   "CMakeFiles/ROSBUILD_genmsg_cpp"
   "../msg_gen/cpp/include/rosserial_arduino_tutorials/Adc.h"

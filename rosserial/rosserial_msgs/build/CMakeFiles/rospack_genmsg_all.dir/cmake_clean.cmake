@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
-  "../src/rosserial_msgs/msg"
   "../msg_gen"
+  "../src/rosserial_msgs/msg"
   "../msg_gen"
   "CMakeFiles/rospack_genmsg_all"
 )

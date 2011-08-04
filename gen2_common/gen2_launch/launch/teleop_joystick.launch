@@ -1,0 +1,5 @@
+<launch>
+    <!-- Start joystick -->
+    <node pkg="joy" type="joy_node" name="joy_node" output="screen"/>
+    <node pkg="joy2twist" type="joy2twist.py" name="joy2twist" output="screen"/>
+</launch>
