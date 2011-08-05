@@ -5,6 +5,7 @@
 
 //ROS specific include statements
 #include <ros.h>
+#include <ros/time.h>
 #include <gen2_motor_driver/drive_msg.h>
 #include <gen2_motor_driver/encoder_gyro.h>
 //--------------------------------------------------------------------------------------------------------------
@@ -186,6 +187,7 @@ void loop()
   //encoder_test();
   
   //set values to encoder_gyro message
+  encoder_gyro_msg.header.stamp = ros::Time::now();
   encoder_gyro_msg.gyro_val = analogRead(gyro_pin);
   encoder_gyro_msg.right_count = eright.totaldistance();
   encoder_gyro_msg.left_count = eleft.totaldistance();
