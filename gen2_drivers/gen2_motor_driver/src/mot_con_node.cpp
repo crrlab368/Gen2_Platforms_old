@@ -20,6 +20,7 @@ double right_enc = 0, left_enc = 0;
 int prev_r_enc = 0, prev_l_enc = 0;
 double r_vel = 0, l_vel = 0;
 double dist_r = 0, dist_l = 0;
+double last_time = 0, current_time = 0, delta_time = 0;
 
 //Global target velocities.
 double vel_goal_l = 0;
@@ -70,7 +71,7 @@ ros::Publisher pid_plot_pub;
 
 
 //Global function for calculating the current wheel velocity
-double wheel_velocity(int cur_enc, int prev_enc)
+double wheel_velocity(int cur_enc, int prev_enc, double d_time)
 {
 	  //Calculate the number of encoder counts since the last message.
 	  double diff_enc = cur_enc-prev_enc;
@@ -78,7 +79,7 @@ double wheel_velocity(int cur_enc, int prev_enc)
 	  //Equation is # of counts * distance traveled per count * time adjustment to seconds.
 	  //Current publishing rate from Arduino is 100Hz or once every 10mS. Multiplication is to 
 	  //adjust to seconds.
-	  return diff_enc*.0232*100;
+	  return diff_enc*.0232*d_time;
 }
 
 
@@ -117,9 +118,14 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	right_enc = msg_in.right_count;
 	left_enc = msg_in.left_count;
 
+	//Calculate the time between messages for the wheel velocity function.
+	current_time = last_time;
+	current_time = msg_in.header.stamp.toSec();
+	delta_time = current_time - last_time;
+
 	//Calculates the current velocity of each wheel.
-	r_vel = wheel_velocity(msg_in.right_count,prev_r_enc);
-	l_vel = wheel_velocity(msg_in.left_count,prev_l_enc);
+	r_vel = wheel_velocity(msg_in.right_count,prev_r_enc, delta_time);
+	l_vel = wheel_velocity(msg_in.left_count,prev_l_enc, delta_time);
 
 	if(left_direction == false)
 	{
@@ -129,6 +135,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	{
 		r_vel = -r_vel;
 	}
+
 	//Stores the current encoder counts for future reference in next cycle.
 	prev_r_enc = msg_in.right_count;
 	prev_l_enc = msg_in.left_count;
