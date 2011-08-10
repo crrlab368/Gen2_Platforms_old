@@ -78,7 +78,7 @@ double wheel_velocity(int cur_enc, int prev_enc, double d_time)
 	  //Return the velocity in cm/s.  
 	  //Equation is # of counts * distance traveled per count * time adjustment to seconds.
 	  //Current publishing rate from Arduino is 100Hz or once every 10mS. Multiplication is to 
-	  //adjust to seconds.
+	  //adjust to cm/seconds.
 	  return diff_enc*.0232*100/d_time;
 }
 
@@ -246,7 +246,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 		pwm_r = 0;
 	}
  
-	ROS_INFO("\nRight Encodder: %d\nLeft Encoder: %d\nRight Vel: %f\nLeft Vel: %f\nRight Dist: %f\nLeft Dist: %f\nR_diff: %f\nL_diff:%f\nR_PWM: %d\nL_PWM: %d", msg_in.right_count,msg_in.left_count,r_vel, l_vel,dist_r,dist_l,r_diff,l_diff,pwm_r, pwm_l);
+	ROS_INFO("\nRight Encodder: %d\nLeft Encoder: %d\nRight Vel: %f\nLeft Vel: %f\nRight Dist: %f\nLeft Dist: %f\nR_diff: %f\nL_diff:%f\nR_PWM: %d\nL_PWM: %d\nDelta_time: %f", msg_in.right_count,msg_in.left_count,r_vel, l_vel,dist_r,dist_l,r_diff,l_diff,pwm_r, pwm_l, delta_time);
 
 	//Creates message to be packed for sending to the Arduino.
 	gen2_motor_driver::drive_msg msg_out;
