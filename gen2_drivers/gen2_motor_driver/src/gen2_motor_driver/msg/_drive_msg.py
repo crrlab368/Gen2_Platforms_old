@@ -4,19 +4,19 @@ import struct
 
 
 class drive_msg(roslib.message.Message):
-  _md5sum = "ee8af9d8d361abd230a87aebf4810eb3"
+  _md5sum = "cfda8c2c59f5a59911f03e77663c870f"
   _type = "gen2_motor_driver/drive_msg"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """
-int32 left_pwm
-int32 right_pwm
+int8 left_pwm
+int8 right_pwm
 bool left_dir
 bool right_dir
 
 
 """
   __slots__ = ['left_pwm','right_pwm','left_dir','right_dir']
-  _slot_types = ['int32','int32','bool','bool']
+  _slot_types = ['int8','int8','bool','bool']
 
   def __init__(self, *args, **kwds):
     """
@@ -63,7 +63,7 @@ bool right_dir
     """
     try:
       _x = self
-      buff.write(_struct_2i2B.pack(_x.left_pwm, _x.right_pwm, _x.left_dir, _x.right_dir))
+      buff.write(_struct_2b2B.pack(_x.left_pwm, _x.right_pwm, _x.left_dir, _x.right_dir))
     except struct.error, se: self._check_types(se)
     except TypeError, te: self._check_types(te)
 
@@ -77,8 +77,8 @@ bool right_dir
       end = 0
       _x = self
       start = end
-      end += 10
-      (_x.left_pwm, _x.right_pwm, _x.left_dir, _x.right_dir,) = _struct_2i2B.unpack(str[start:end])
+      end += 4
+      (_x.left_pwm, _x.right_pwm, _x.left_dir, _x.right_dir,) = _struct_2b2B.unpack(str[start:end])
       self.left_dir = bool(self.left_dir)
       self.right_dir = bool(self.right_dir)
       return self
@@ -96,7 +96,7 @@ bool right_dir
     """
     try:
       _x = self
-      buff.write(_struct_2i2B.pack(_x.left_pwm, _x.right_pwm, _x.left_dir, _x.right_dir))
+      buff.write(_struct_2b2B.pack(_x.left_pwm, _x.right_pwm, _x.left_dir, _x.right_dir))
     except struct.error, se: self._check_types(se)
     except TypeError, te: self._check_types(te)
 
@@ -112,8 +112,8 @@ bool right_dir
       end = 0
       _x = self
       start = end
-      end += 10
-      (_x.left_pwm, _x.right_pwm, _x.left_dir, _x.right_dir,) = _struct_2i2B.unpack(str[start:end])
+      end += 4
+      (_x.left_pwm, _x.right_pwm, _x.left_dir, _x.right_dir,) = _struct_2b2B.unpack(str[start:end])
       self.left_dir = bool(self.left_dir)
       self.right_dir = bool(self.right_dir)
       return self
@@ -121,4 +121,4 @@ bool right_dir
       raise roslib.message.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = roslib.message.struct_I
-_struct_2i2B = struct.Struct("<2i2B")
+_struct_2b2B = struct.Struct("<2b2B")

@@ -34,11 +34,11 @@ struct drive_msg_ : public ros::Message
   {
   }
 
-  typedef int32_t _left_pwm_type;
-  int32_t left_pwm;
+  typedef int8_t _left_pwm_type;
+  int8_t left_pwm;
 
-  typedef int32_t _right_pwm_type;
-  int32_t right_pwm;
+  typedef int8_t _right_pwm_type;
+  int8_t right_pwm;
 
   typedef uint8_t _left_dir_type;
   uint8_t left_dir;
@@ -55,7 +55,7 @@ public:
   ROS_DEPRECATED const std::string __getDataType() const { return __s_getDataType_(); }
 
 private:
-  static const char* __s_getMD5Sum_() { return "ee8af9d8d361abd230a87aebf4810eb3"; }
+  static const char* __s_getMD5Sum_() { return "cfda8c2c59f5a59911f03e77663c870f"; }
 public:
   ROS_DEPRECATED static const std::string __s_getMD5Sum() { return __s_getMD5Sum_(); }
 
@@ -63,8 +63,8 @@ public:
 
 private:
   static const char* __s_getMessageDefinition_() { return "\n\
-int32 left_pwm\n\
-int32 right_pwm\n\
+int8 left_pwm\n\
+int8 right_pwm\n\
 bool left_dir\n\
 bool right_dir\n\
 \n\
@@ -130,12 +130,12 @@ template<class ContainerAllocator>
 struct MD5Sum< ::gen2_motor_driver::drive_msg_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "ee8af9d8d361abd230a87aebf4810eb3";
+    return "cfda8c2c59f5a59911f03e77663c870f";
   }
 
   static const char* value(const  ::gen2_motor_driver::drive_msg_<ContainerAllocator> &) { return value(); } 
-  static const uint64_t static_value1 = 0xee8af9d8d361abd2ULL;
-  static const uint64_t static_value2 = 0x30a87aebf4810eb3ULL;
+  static const uint64_t static_value1 = 0xcfda8c2c59f5a599ULL;
+  static const uint64_t static_value2 = 0x11f03e77663c870fULL;
 };
 
 template<class ContainerAllocator>
@@ -153,8 +153,8 @@ struct Definition< ::gen2_motor_driver::drive_msg_<ContainerAllocator> > {
   static const char* value() 
   {
     return "\n\
-int32 left_pwm\n\
-int32 right_pwm\n\
+int8 left_pwm\n\
+int8 right_pwm\n\
 bool left_dir\n\
 bool right_dir\n\
 \n\
@@ -200,9 +200,9 @@ struct Printer< ::gen2_motor_driver::drive_msg_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const  ::gen2_motor_driver::drive_msg_<ContainerAllocator> & v) 
   {
     s << indent << "left_pwm: ";
-    Printer<int32_t>::stream(s, indent + "  ", v.left_pwm);
+    Printer<int8_t>::stream(s, indent + "  ", v.left_pwm);
     s << indent << "right_pwm: ";
-    Printer<int32_t>::stream(s, indent + "  ", v.right_pwm);
+    Printer<int8_t>::stream(s, indent + "  ", v.right_pwm);
     s << indent << "left_dir: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.left_dir);
     s << indent << "right_dir: ";

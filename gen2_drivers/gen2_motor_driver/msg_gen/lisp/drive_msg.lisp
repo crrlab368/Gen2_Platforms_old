@@ -10,12 +10,12 @@
   ((left_pwm
     :reader left_pwm
     :initarg :left_pwm
-    :type cl:integer
+    :type cl:fixnum
     :initform 0)
    (right_pwm
     :reader right_pwm
     :initarg :right_pwm
-    :type cl:integer
+    :type cl:fixnum
     :initform 0)
    (left_dir
     :reader left_dir
@@ -58,17 +58,11 @@
   (right_dir m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <drive_msg>) ostream)
   "Serializes a message object of type '<drive_msg>"
-  (cl:let* ((signed (cl:slot-value msg 'left_pwm)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'left_pwm)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
     )
-  (cl:let* ((signed (cl:slot-value msg 'right_pwm)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'right_pwm)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
     )
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'left_dir) 1 0)) ostream)
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'right_dir) 1 0)) ostream)
@@ -77,16 +71,10 @@
   "Deserializes a message object of type '<drive_msg>"
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'left_pwm) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+      (cl:setf (cl:slot-value msg 'left_pwm) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'right_pwm) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+      (cl:setf (cl:slot-value msg 'right_pwm) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
     (cl:setf (cl:slot-value msg 'left_dir) (cl:not (cl:zerop (cl:read-byte istream))))
     (cl:setf (cl:slot-value msg 'right_dir) (cl:not (cl:zerop (cl:read-byte istream))))
   msg
@@ -99,20 +87,20 @@
   "gen2_motor_driver/drive_msg")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<drive_msg>)))
   "Returns md5sum for a message object of type '<drive_msg>"
-  "ee8af9d8d361abd230a87aebf4810eb3")
+  "cfda8c2c59f5a59911f03e77663c870f")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'drive_msg)))
   "Returns md5sum for a message object of type 'drive_msg"
-  "ee8af9d8d361abd230a87aebf4810eb3")
+  "cfda8c2c59f5a59911f03e77663c870f")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<drive_msg>)))
   "Returns full string definition for message of type '<drive_msg>"
-  (cl:format cl:nil "~%int32 left_pwm~%int32 right_pwm~%bool left_dir~%bool right_dir~%~%~%~%"))
+  (cl:format cl:nil "~%int8 left_pwm~%int8 right_pwm~%bool left_dir~%bool right_dir~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'drive_msg)))
   "Returns full string definition for message of type 'drive_msg"
-  (cl:format cl:nil "~%int32 left_pwm~%int32 right_pwm~%bool left_dir~%bool right_dir~%~%~%~%"))
+  (cl:format cl:nil "~%int8 left_pwm~%int8 right_pwm~%bool left_dir~%bool right_dir~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <drive_msg>))
   (cl:+ 0
-     4
-     4
+     1
+     1
      1
      1
 ))
