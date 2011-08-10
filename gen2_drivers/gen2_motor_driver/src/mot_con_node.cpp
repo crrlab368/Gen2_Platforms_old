@@ -121,7 +121,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	//Calculate the time between messages for the wheel velocity function.
 	last_time = current_time;
 	current_time = msg_in.header.stamp.toSec();
-	delta_time = (current_time - last_time) * 1000;
+	delta_time = (current_time - last_time) * 100;
 
 	//Calculates the current velocity of each wheel.
 	r_vel = wheel_velocity(msg_in.right_count,prev_r_enc, delta_time);
