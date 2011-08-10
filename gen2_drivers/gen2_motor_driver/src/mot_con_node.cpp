@@ -79,7 +79,7 @@ double wheel_velocity(int cur_enc, int prev_enc, double d_time)
 	  //Equation is # of counts * distance traveled per count * time adjustment to seconds.
 	  //Current publishing rate from Arduino is 100Hz or once every 10mS. Multiplication is to 
 	  //adjust to cm/seconds.
-	  return diff_enc*.0232/100/d_time;
+	  return diff_enc*.0232/d_time;
 }
 
 
