@@ -127,7 +127,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	r_vel = wheel_velocity(msg_in.right_count,prev_r_enc, delta_time);
 	l_vel = wheel_velocity(msg_in.left_count,prev_l_enc, delta_time);
 
-	if(left_direction == false)
+	if(left_direction == false && right_direction == false)
 	{
 		l_vel = -l_vel;
 	}
