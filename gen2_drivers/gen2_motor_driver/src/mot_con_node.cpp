@@ -168,14 +168,14 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	pTerm_l = (l_diff * p_gain_l);
 
 	//Check if error state has exceeded the max or min level.
-	if(iState_l > i_max) 
+	/*if(iState_l > i_max) 
 	{
 		iState_l = i_max;
 	}
 	else if(iState_l < i_min)
 	{
 		iState_l = i_min;
-	}
+	}*/
 
 	//Calculate i term.
 	iTerm_l = (i_gain_l * iState_l);
