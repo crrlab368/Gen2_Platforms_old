@@ -79,7 +79,7 @@ double wheel_velocity(int cur_enc, int prev_enc, double d_time)
 	  //Equation is # of counts * distance traveled per count * time adjustment to seconds.
 	  //Current publishing rate from Arduino is 100Hz or once every 10mS. Multiplication is to 
 	  //adjust to seconds.
-	  return diff_enc*.0232*d_time;
+	  return diff_enc*.0232*100/d_time;
 }
 
 
@@ -121,7 +121,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	//Calculate the time between messages for the wheel velocity function.
 	last_time = current_time;
 	current_time = msg_in.header.stamp.toSec();
-	delta_time = (current_time - last_time) * 100;
+	delta_time = (current_time - last_time);
 
 	//Calculates the current velocity of each wheel.
 	r_vel = wheel_velocity(msg_in.right_count,prev_r_enc, delta_time);
