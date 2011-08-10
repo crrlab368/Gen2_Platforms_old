@@ -38,7 +38,7 @@ double d_gain_r = 0;
 
 //Control limit variables in PID.
 const int i_min = 0;
-const int i_max = 100;
+const int i_max = 255;
 const int pwm_min = 0;
 const int pwm_max = 255; 
 
@@ -246,7 +246,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 		pwm_r = 0;
 	}
  
-	ROS_INFO("\nRight Encodder: %d\nLeft Encoder: %d\nRight Vel: %f\nLeft Vel: %f\nRight Dist: %f\nLeft Dist: %f\nR_diff: %f\nL_diff:%f\nR_PWM: %d\nL_PWM: %d\nDelta_time: %f", msg_in.right_count,msg_in.left_count,r_vel, l_vel,dist_r,dist_l,r_diff,l_diff,pwm_r, pwm_l, delta_time);
+	ROS_INFO("\nRight Encodder: %d\nLeft Encoder: %d\nRight Vel: %f\nRight Goal: %f\nLeft Vel: %f\nLeft Goal: %f\nRight Dist: %f\nLeft Dist: %f\nR_diff: %f\nL_diff:%f\nR_PWM: %d\nL_PWM: %d\nDelta_time: %f", msg_in.right_count,msg_in.left_count,r_vel,vel_goal_r,l_vel,vel_goal_l,dist_r,dist_l,r_diff,l_diff,pwm_r, pwm_l, delta_time);
 
 	//Creates message to be packed for sending to the Arduino.
 	gen2_motor_driver::drive_msg msg_out;
