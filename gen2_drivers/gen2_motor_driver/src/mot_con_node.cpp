@@ -38,7 +38,7 @@ double d_gain_r = 0;
 
 //Control limit variables in PID.
 const int i_min = 0;
-const int i_max = 255;
+const int i_max = 100;
 const int pwm_min = 0;
 const int pwm_max = 255; 
 
