@@ -61,8 +61,9 @@ int pwm_l = 0;
 int pwm_r = 0;
 
 //Wheel Diameter
-double right_diam = 0;
-double left_diam = 0;
+double right_circum = 0;
+double left_circum = 0;
+const int enc_per_rev = 2031;
 
 
 //Declaration of publisher for drive_msg and pid_plot.
@@ -71,15 +72,15 @@ ros::Publisher pid_plot_pub;
 
 
 //Global function for calculating the current wheel velocity
-double wheel_velocity(int cur_enc, int prev_enc, double d_time)
+double wheel_velocity(int cur_enc, int prev_enc, double d_time, double wheel_circum)
 {
 	  //Calculate the number of encoder counts since the last message.
 	  double diff_enc = cur_enc-prev_enc;
 	  //Return the velocity in cm/s.  
 	  //Equation is # of counts * distance traveled per count * time adjustment to seconds.
 	  //Current publishing rate from Arduino is 100Hz or once every 10mS. Multiplication is to 
-	  //adjust to cm/seconds.
-	  return diff_enc*.0232/d_time;
+	  //adjust to cm/seconds. Wheel Circum is in cm. Resulting Velocity is cm/s
+	  return diff_enc*(wheel_circum/enc_per_rev)/d_time;
 }
 
 
@@ -88,8 +89,8 @@ void velocityCallback(const geometry_msgs::Twist &msg_vel_in)
 	//Get linear and angualr velocity from Twist message.
 	double x = msg_vel_in.linear.x;
 	double z = msg_vel_in.angular.z;
-	vel_goal_l = (100*x-((z*left_diam)/2));  //multiply by 100 to translate into cm/s from m/s
-	vel_goal_r = (100*x+((z*right_diam)/2));
+	vel_goal_l = (100*x-((z*left_circum)/2));  //multiply by 100 to translate into cm/s from m/s
+	vel_goal_r = (100*x+((z*right_circum)/2));
 }
 
 
@@ -103,6 +104,8 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	left_direction = true;
 	right_direction = true;
 
+	//Pid only is aware of PWM values.  All velocities must be positive.
+	//Direction flags are used to keep track of motro direction.
 	if (vel_goal_l < 0)
 	{
 		vel_goal_l = -vel_goal_l;
@@ -124,8 +127,8 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	delta_time = (current_time - last_time);
 
 	//Calculates the current velocity of each wheel.
-	r_vel = wheel_velocity(msg_in.right_count,prev_r_enc, delta_time);
-	l_vel = wheel_velocity(msg_in.left_count,prev_l_enc, delta_time);
+	r_vel = wheel_velocity(msg_in.right_count,prev_r_enc, delta_time, right_circum);
+	l_vel = wheel_velocity(msg_in.left_count,prev_l_enc, delta_time, left_circum);
 
 
 	if(left_direction == false)
@@ -279,40 +282,44 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 //Main start.
 int main(int argc, char **argv)
 {
-  //Initialization function ROS requires that sets the name for the node.
-  ros::init(argc, argv, "mot_con_node");
+	//Initialization function ROS requires that sets the name for the node.
+	ros::init(argc, argv, "mot_con_node");
   
-  //Creates the node handle for communication on ROS network.
-  ros::NodeHandle n;
+	//Creates the node handle for communication on ROS network.
+  	ros::NodeHandle n;
   
-  //Initialize the publisher for drive_msg and pid_plot.
-  drive_pub = n.advertise<gen2_motor_driver::drive_msg>("drive_msg", 1000);
-  pid_plot_pub = n.advertise<gen2_motor_driver::pid_plot>("pid_plot", 1000);
+	//Initialize the publisher for drive_msg and pid_plot.
+	drive_pub = n.advertise<gen2_motor_driver::drive_msg>("drive_msg", 1000);
+  	pid_plot_pub = n.advertise<gen2_motor_driver::pid_plot>("pid_plot", 1000);
   
-  //Initialize the subscriber for encoder_gyro messages. 
-  ros::Subscriber sub = n.subscribe("encoder_gyro", 1000, encoderCallback);
+  	//Initialize the subscriber for encoder_gyro messages. 
+  	ros::Subscriber sub = n.subscribe("encoder_gyro", 1000, encoderCallback);
 
-  //Initialize the subscriber for cmd vel (angular and linear velocity messages)
-  ros::Subscriber sub_vel = n.subscribe("cmd_vel", 10, velocityCallback);
+  	//Initialize the subscriber for cmd vel (angular and linear velocity messages)
+  	ros::Subscriber sub_vel = n.subscribe("cmd_vel", 10, velocityCallback);
  
-  //Check for messages.
+  	//While ros has not been shutdown or the node has not been kicked off the network or shutdown, continue this loop
+  	while(ros::ok())
+ 	{
+		//Get current right motor pid gains from Parameter Server
+		n.param("mot_con_node/right_p", p_gain_r, 6.0);
+		n.param("mot_con_node/right_i", i_gain_r, 0.5);
+	 	n.param("mot_con_node/right_d", d_gain_r, 0.0);
 
-  while(1)
- {
-	n.param("mot_con_node/right_p", p_gain_r, 6.0);
-	n.param("mot_con_node/right_i", i_gain_r, 0.5);
- 	n.param("mot_con_node/right_d", d_gain_r, 0.0);
+		//Get current left motor pid gains from Parameter Server
+		n.param("mot_con_node/left_p", p_gain_l, 6.0);
+		n.param("mot_con_node/left_i", i_gain_l, 0.5);
+		n.param("mot_con_node/left_d", d_gain_l, 0.0);
 
-	n.param("mot_con_node/left_p", p_gain_l, 6.0);
-	n.param("mot_con_node/left_i", i_gain_l, 0.5);
-	n.param("mot_con_node/left_d", d_gain_l, 0.0);
+		//Get main left and righ wheel diameter from Parameter Server
+		n.param("mot_con_node/r_diam", right_circum, 36.25);
+		n.param("mot_con_node/l_diam", left_circum, 36.25);
 
-	n.param("mot_con_node/r_diam", right_diam, 36.25);
-	n.param("mot_con_node/l_diam", left_diam, 36.25);
-	ros::spinOnce();
- }
+		//Spin the ROS nodehandle.
+		ros::spinOnce();
+ 	}
   
- //End of main loop.
- return 0;
+	//End of main loop.
+	return 0;
 }
 
