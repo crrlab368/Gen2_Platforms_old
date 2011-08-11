@@ -131,6 +131,9 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	r_vel = wheel_velocity(msg_in.right_count,prev_r_enc, delta_time, right_circum);
 	l_vel = wheel_velocity(msg_in.left_count,prev_l_enc, delta_time, left_circum);
 
+	//Calculates current distance traveled by each wheel. 
+	dist_l+=(l_vel/100)*delta_time;
+	dist_r+=(r_vel/100)*delta_time;
 
 	if(left_direction == false)
 	{
@@ -153,9 +156,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	//Publishes pid_plot message.
 	pid_plot_pub.publish(plot_out);
 
-	//Calculates current distance traveled by each wheel. 
-	dist_l+=(l_vel/100);
-	dist_r+=(r_vel/100);
+
 
 	//Prints the velocities and distance traveled for testing. 
 	//ROS_INFO("\nRight Vel = %f\nLeft Vel = %f\nRight Dist: %f/nLeft Dist: %f",r_vel, l_vel,dist_r, dist_l);
