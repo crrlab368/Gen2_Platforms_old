@@ -21,9 +21,12 @@
 		<param name="left_i" value=".5" type="double" />
 		<param name="left_d" value="0" type="double" />	
 
-		<!-- Set wheel diameter -->
-		<param name ="r_diam" value="36.25" type="double" />
-		<param name ="l_diam" value="36.25" type="double" />
+		<!-- Set wheel circumference -->
+		<param name ="r_circum" value="45.856" type="double" />
+		<param name ="l_circum" value="46.36" type="double" />
+
+		<!-- Set distance between wheels -->
+		<param name ="wheel_base" value="36.25" type="double" />
 	</node>
 
 </launch>

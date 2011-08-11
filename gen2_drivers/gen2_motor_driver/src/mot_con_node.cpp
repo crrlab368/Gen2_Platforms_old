@@ -63,6 +63,7 @@ int pwm_r = 0;
 //Wheel Diameter
 double right_circum = 0;
 double left_circum = 0;
+double wheel_base = 0;
 const int enc_per_rev = 2031;
 
 
@@ -89,8 +90,8 @@ void velocityCallback(const geometry_msgs::Twist &msg_vel_in)
 	//Get linear and angualr velocity from Twist message.
 	double x = msg_vel_in.linear.x;
 	double z = msg_vel_in.angular.z;
-	vel_goal_l = (100*x-((z*left_circum)/2));  //multiply by 100 to translate into cm/s from m/s
-	vel_goal_r = (100*x+((z*right_circum)/2));
+	vel_goal_l = (100*x-((z*wheel_base)/2));  //multiply by 100 to translate into cm/s from m/s
+	vel_goal_r = (100*x+((z*wheel_base)/2));
 }
 
 
@@ -312,8 +313,11 @@ int main(int argc, char **argv)
 		n.param("mot_con_node/left_d", d_gain_l, 0.0);
 
 		//Get main left and righ wheel diameter from Parameter Server
-		n.param("mot_con_node/r_diam", right_circum, 36.25);
-		n.param("mot_con_node/l_diam", left_circum, 36.25);
+		n.param("mot_con_node/r_circum", right_circum, 47.0);
+		n.param("mot_con_node/l_circum", left_circum, 47.0);
+
+		//Get wheel base diameter from Parameter Server
+		n.param("mot_con_node/wheel_base", wheel_base, 36.25);
 
 		//Spin the ROS nodehandle.
 		ros::spinOnce();
