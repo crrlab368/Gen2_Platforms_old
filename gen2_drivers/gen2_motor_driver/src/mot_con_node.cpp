@@ -105,12 +105,12 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 
 	if (vel_goal_l < 0)
 	{
-		//vel_goal_l = -vel_goal_l;
+		vel_goal_l = -vel_goal_l;
 		left_direction = false;
 	}
 	if (vel_goal_r < 0)
 	{
-		//vel_goal_r = -vel_goal_r;
+		vel_goal_r = -vel_goal_r;
 		right_direction = false;
 	}
 
@@ -127,8 +127,8 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	r_vel = wheel_velocity(msg_in.right_count,prev_r_enc, delta_time);
 	l_vel = wheel_velocity(msg_in.left_count,prev_l_enc, delta_time);
 
-/*
-	if(left_direction == false && right_direction == false)
+
+	if(left_direction == false)
 	{
 		l_vel = -l_vel;
 	}
@@ -136,7 +136,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	{
 		r_vel = -r_vel;
 	}
-*/
+
 	//Stores the current encoder counts for future reference in next cycle.
 	prev_r_enc = msg_in.right_count;
 	prev_l_enc = msg_in.left_count;
@@ -260,7 +260,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	msg_out.left_dir = left_direction;
 	msg_out.right_dir = right_direction;
 
-/*
+
 	if(left_direction == false)
 	{
 		vel_goal_l = -vel_goal_l;
@@ -271,7 +271,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 		vel_goal_r = -vel_goal_r;
 	}
 
- */
+
 	//Publishes the message. 
  	drive_pub.publish(msg_out);
 }
