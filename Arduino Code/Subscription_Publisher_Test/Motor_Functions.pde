@@ -103,13 +103,4 @@ void Motor::left_mstop()
 
 }
 
-Encoder::Encoder(int ch1Pin, int ch2Pin)
-{
-  pinMode(ch1Pin, INPUT);
-  pinMode(ch2Pin, INPUT);
-  _ch1Pin = ch1Pin;
-  _ch2Pin = ch2Pin;
-  _odometer = 0;
-  _delta = 0;
-  _oldodom = 0;
-}
+
