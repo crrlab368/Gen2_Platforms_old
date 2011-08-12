@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+../msg_gen/cpp/include/gen2_motor_driver/pid_plot.h
+string
+-
+vector
+-
+ostream
+-
+ros/serialization.h
+../msg_gen/cpp/include/gen2_motor_driver/ros/serialization.h
+ros/builtin_message_traits.h
+../msg_gen/cpp/include/gen2_motor_driver/ros/builtin_message_traits.h
+ros/message_operations.h
+../msg_gen/cpp/include/gen2_motor_driver/ros/message_operations.h
+ros/message.h
+../msg_gen/cpp/include/gen2_motor_driver/ros/message.h
+ros/time.h
+../msg_gen/cpp/include/gen2_motor_driver/ros/time.h
+
 /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/encoder_odom_node.cpp
 ros/ros.h
 -
@@ -13,6 +31,8 @@ tf/transform_broadcaster.h
 -
 nav_msgs/Odometry.h
 -
+gen2_motor_driver/pid_plot.h
+/home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/gen2_motor_driver/pid_plot.h
 
 /opt/ros/diamondback/stacks/common_msgs/geometry_msgs/msg_gen/cpp/include/geometry_msgs/Point.h
 string
