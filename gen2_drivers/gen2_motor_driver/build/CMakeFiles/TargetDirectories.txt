@@ -4,6 +4,8 @@
 /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
 /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
 /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles/clean-test-results.dir
+/home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles/encoder_odom_node.dir
+/home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles/gyro.dir
 /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles/mot_con_node.dir
 /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles/rosbuild_precompile.dir
 /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles/rosbuild_premsgsrvgen.dir

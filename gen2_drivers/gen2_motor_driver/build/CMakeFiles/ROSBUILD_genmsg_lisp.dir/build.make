@@ -81,17 +81,31 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_encoder_gyro.lisp
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosbag/manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosbagmigration/manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/common_msgs/geometry_msgs/manifest.xml
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/geometry/eigen/manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/geometry/kdl/manifest.xml
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/geometry/bullet/manifest.xml
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/geometry/angles/manifest.xml
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosnode/manifest.xml
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosmsg/manifest.xml
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rostopic/manifest.xml
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosservice/manifest.xml
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/utilities/roswtf/manifest.xml
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/utilities/message_filters/manifest.xml
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/geometry/tf/manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/srv_gen/generated
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/topic_tools/srv_gen/generated
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/common_msgs/geometry_msgs/msg_gen/generated
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/msg_gen/generated
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/srv_gen/generated
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/msg_gen/generated
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/srv_gen/generated
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/geometry/tf/msg_gen/generated
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/geometry/tf/srv_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/pid_plot.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_pid_plot.lisp"
 	/opt/ros/diamondback/stacks/ros_comm/clients/roslisp/scripts/genmsg_lisp.py /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/msg/pid_plot.msg
@@ -129,17 +143,31 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_encoder_gyro.lisp
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosbag/manifest.xml
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosbagmigration/manifest.xml
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/common_msgs/geometry_msgs/manifest.xml
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/manifest.xml
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/manifest.xml
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/geometry/eigen/manifest.xml
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/geometry/kdl/manifest.xml
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/geometry/bullet/manifest.xml
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/geometry/angles/manifest.xml
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosnode/manifest.xml
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosmsg/manifest.xml
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rostopic/manifest.xml
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosservice/manifest.xml
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/utilities/roswtf/manifest.xml
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/utilities/message_filters/manifest.xml
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/geometry/tf/manifest.xml
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/srv_gen/generated
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/topic_tools/srv_gen/generated
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/common_msgs/geometry_msgs/msg_gen/generated
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/msg_gen/generated
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/srv_gen/generated
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/msg_gen/generated
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/srv_gen/generated
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/geometry/tf/msg_gen/generated
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/geometry/tf/srv_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/drive_msg.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_drive_msg.lisp"
 	/opt/ros/diamondback/stacks/ros_comm/clients/roslisp/scripts/genmsg_lisp.py /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/msg/drive_msg.msg
@@ -178,17 +206,31 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_encoder_gyro.lisp
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosbag/manifest.xml
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosbagmigration/manifest.xml
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/common_msgs/geometry_msgs/manifest.xml
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/manifest.xml
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/manifest.xml
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/geometry/eigen/manifest.xml
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/geometry/kdl/manifest.xml
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/geometry/bullet/manifest.xml
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/geometry/angles/manifest.xml
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosnode/manifest.xml
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosmsg/manifest.xml
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rostopic/manifest.xml
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosservice/manifest.xml
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/utilities/roswtf/manifest.xml
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/utilities/message_filters/manifest.xml
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/geometry/tf/manifest.xml
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/srv_gen/generated
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/topic_tools/srv_gen/generated
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/common_msgs/geometry_msgs/msg_gen/generated
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/msg_gen/generated
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/srv_gen/generated
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/msg_gen/generated
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/srv_gen/generated
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/geometry/tf/msg_gen/generated
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/geometry/tf/srv_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/encoder_gyro.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_encoder_gyro.lisp"
 	/opt/ros/diamondback/stacks/ros_comm/clients/roslisp/scripts/genmsg_lisp.py /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/msg/encoder_gyro.msg

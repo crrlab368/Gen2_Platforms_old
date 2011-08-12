@@ -177,6 +177,32 @@ clean-test-results/fast:
 .PHONY : clean-test-results/fast
 
 #=============================================================================
+# Target rules for targets named encoder_odom_node
+
+# Build rule for target.
+encoder_odom_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 encoder_odom_node
+.PHONY : encoder_odom_node
+
+# fast build rule for target.
+encoder_odom_node/fast:
+	$(MAKE) -f CMakeFiles/encoder_odom_node.dir/build.make CMakeFiles/encoder_odom_node.dir/build
+.PHONY : encoder_odom_node/fast
+
+#=============================================================================
+# Target rules for targets named gyro
+
+# Build rule for target.
+gyro: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gyro
+.PHONY : gyro
+
+# fast build rule for target.
+gyro/fast:
+	$(MAKE) -f CMakeFiles/gyro.dir/build.make CMakeFiles/gyro.dir/build
+.PHONY : gyro/fast
+
+#=============================================================================
 # Target rules for targets named mot_con_node
 
 # Build rule for target.
@@ -333,6 +359,36 @@ tests/fast:
 .PHONY : tests/fast
 
 # target to build an object file
+src/encoder_odom_node.o:
+	$(MAKE) -f CMakeFiles/encoder_odom_node.dir/build.make CMakeFiles/encoder_odom_node.dir/src/encoder_odom_node.o
+.PHONY : src/encoder_odom_node.o
+
+# target to preprocess a source file
+src/encoder_odom_node.i:
+	$(MAKE) -f CMakeFiles/encoder_odom_node.dir/build.make CMakeFiles/encoder_odom_node.dir/src/encoder_odom_node.i
+.PHONY : src/encoder_odom_node.i
+
+# target to generate assembly for a file
+src/encoder_odom_node.s:
+	$(MAKE) -f CMakeFiles/encoder_odom_node.dir/build.make CMakeFiles/encoder_odom_node.dir/src/encoder_odom_node.s
+.PHONY : src/encoder_odom_node.s
+
+# target to build an object file
+src/gyro.o:
+	$(MAKE) -f CMakeFiles/gyro.dir/build.make CMakeFiles/gyro.dir/src/gyro.o
+.PHONY : src/gyro.o
+
+# target to preprocess a source file
+src/gyro.i:
+	$(MAKE) -f CMakeFiles/gyro.dir/build.make CMakeFiles/gyro.dir/src/gyro.i
+.PHONY : src/gyro.i
+
+# target to generate assembly for a file
+src/gyro.s:
+	$(MAKE) -f CMakeFiles/gyro.dir/build.make CMakeFiles/gyro.dir/src/gyro.s
+.PHONY : src/gyro.s
+
+# target to build an object file
 src/mot_con_node.o:
 	$(MAKE) -f CMakeFiles/mot_con_node.dir/build.make CMakeFiles/mot_con_node.dir/src/mot_con_node.o
 .PHONY : src/mot_con_node.o
@@ -360,6 +416,8 @@ help:
 	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... clean-test-results"
 	@echo "... edit_cache"
+	@echo "... encoder_odom_node"
+	@echo "... gyro"
 	@echo "... mot_con_node"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
@@ -373,6 +431,12 @@ help:
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
+	@echo "... src/encoder_odom_node.o"
+	@echo "... src/encoder_odom_node.i"
+	@echo "... src/encoder_odom_node.s"
+	@echo "... src/gyro.o"
+	@echo "... src/gyro.i"
+	@echo "... src/gyro.s"
 	@echo "... src/mot_con_node.o"
 	@echo "... src/mot_con_node.i"
 	@echo "... src/mot_con_node.s"

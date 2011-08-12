@@ -77,28 +77,42 @@ CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosbag/manifest.xml
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosbagmigration/manifest.xml
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/common_msgs/geometry_msgs/manifest.xml
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/manifest.xml
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/manifest.xml
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/geometry/eigen/manifest.xml
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/geometry/kdl/manifest.xml
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/geometry/bullet/manifest.xml
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/geometry/angles/manifest.xml
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosnode/manifest.xml
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosmsg/manifest.xml
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/tools/rostopic/manifest.xml
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosservice/manifest.xml
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/utilities/roswtf/manifest.xml
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/utilities/message_filters/manifest.xml
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/geometry/tf/manifest.xml
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/srv_gen/generated
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/ros_comm/tools/topic_tools/srv_gen/generated
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/common_msgs/geometry_msgs/msg_gen/generated
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/msg_gen/generated
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/srv_gen/generated
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/msg_gen/generated
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/srv_gen/generated
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/geometry/tf/msg_gen/generated
+CMakeFiles/mot_con_node.dir/src/mot_con_node.o: /opt/ros/diamondback/stacks/geometry/tf/srv_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mot_con_node.dir/src/mot_con_node.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DEIGEN_USE_NEW_STDVECTOR -DEIGEN2_SUPPORT -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mot_con_node.dir/src/mot_con_node.o -c /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/mot_con_node.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DEIGEN_USE_NEW_STDVECTOR -DEIGEN2_SUPPORT -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/mot_con_node.dir/src/mot_con_node.o -c /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/mot_con_node.cpp
 
 CMakeFiles/mot_con_node.dir/src/mot_con_node.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mot_con_node.dir/src/mot_con_node.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DEIGEN_USE_NEW_STDVECTOR -DEIGEN2_SUPPORT -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/mot_con_node.cpp > CMakeFiles/mot_con_node.dir/src/mot_con_node.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DEIGEN_USE_NEW_STDVECTOR -DEIGEN2_SUPPORT -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/mot_con_node.cpp > CMakeFiles/mot_con_node.dir/src/mot_con_node.i
 
 CMakeFiles/mot_con_node.dir/src/mot_con_node.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mot_con_node.dir/src/mot_con_node.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DEIGEN_USE_NEW_STDVECTOR -DEIGEN2_SUPPORT -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/mot_con_node.cpp -o CMakeFiles/mot_con_node.dir/src/mot_con_node.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DEIGEN_USE_NEW_STDVECTOR -DEIGEN2_SUPPORT -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/mot_con_node.cpp -o CMakeFiles/mot_con_node.dir/src/mot_con_node.s
 
 CMakeFiles/mot_con_node.dir/src/mot_con_node.o.requires:
 .PHONY : CMakeFiles/mot_con_node.dir/src/mot_con_node.o.requires

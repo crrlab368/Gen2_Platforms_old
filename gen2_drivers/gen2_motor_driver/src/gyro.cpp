@@ -6,11 +6,11 @@
 *raw gyro data being published in encoder_gyro.msg
 *************************************************************/
 #include "ros/ros.h"
-#include "gen2_drive/encoder_gyro.h"
+#include "gen2_motor_driver/encoder_gyro.h"
 #include "sensor_msgs/Imu.h"
 #include "geometry_msgs/Twist.h"
 #include "math.h"
-#include "gen2_drive/pid_plot.h"
+#include "gen2_motor_driver/pid_plot.h"
 #include "vector"
 #include "time.h"
 #include "kdl/frames.hpp"
@@ -29,8 +29,8 @@ sensor_msgs::Imu imu_data;
 sensor_msgs::Imu imu_raw;
 double gyro_scale_correction;
 
-void update_cal(gen2_drive::pid_plot vel_msg, int analog_in);
-void publish(gen2_drive::pid_plot vel_msg, gen2_drive::encoder_gyro gyro_msg, ros::Time last_time);
+void update_cal(gen2_motor_driver::pid_plot vel_msg, int analog_in);
+void publish(gen2_motor_driver::pid_plot vel_msg, gen2_motor_driver::encoder_gyro gyro_msg, ros::Time last_time);
 
 };
 
@@ -52,10 +52,10 @@ Gen2Gyro::Gen2Gyro()
 	
 	}
 
- void Gen2Gyro::update_cal(gen2_drive::pid_plot vel_msg, int analog_in) 
+ void Gen2Gyro::update_cal(gen2_motor_driver::pid_plot vel_msg, int analog_in) 
 
 {
- if(vel_msg.left_vel == 0 && vel_msg.right_vel == 0) 
+ if(vel_msg.left_vel == 0.0 && vel_msg.right_vel == 0.0) 
   {	
 	int sum = 0;
 
@@ -78,7 +78,7 @@ Gen2Gyro::Gen2Gyro()
 
 }
 
- void Gen2Gyro::publish(gen2_drive::pid_plot vel_msg, gen2_drive::encoder_gyro gyro_msg, ros::Time last_time)
+ void Gen2Gyro::publish(gen2_motor_driver::pid_plot vel_msg, gen2_motor_driver::encoder_gyro gyro_msg, ros::Time last_time)
   {
 	if(cal_offset == 0)
 	{
