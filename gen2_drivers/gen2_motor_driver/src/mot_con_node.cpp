@@ -131,6 +131,14 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	r_vel = wheel_velocity(msg_in.right_count,prev_r_enc, delta_time, right_circum);
 	l_vel = wheel_velocity(msg_in.left_count,prev_l_enc, delta_time, left_circum);
 
+	//Packs pid_plot message for publishing.
+	gen2_motor_driver::pid_plot plot_out;
+	plot_out.left_vel = l_vel;
+	plot_out.right_vel = r_vel;
+
+	//Publishes pid_plot message.
+	pid_plot_pub.publish(plot_out);
+
 	//Calculates current distance traveled by each wheel. 
 	dist_l+=(l_vel/100)*delta_time;
 	dist_r+=(r_vel/100)*delta_time;
@@ -148,13 +156,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	prev_r_enc = msg_in.right_count;
 	prev_l_enc = msg_in.left_count;
 
-	//Packs pid_plot message for publishing.
-	gen2_motor_driver::pid_plot plot_out;
-	plot_out.left_vel = l_vel;
-	plot_out.right_vel = r_vel;
-
-	//Publishes pid_plot message.
-	pid_plot_pub.publish(plot_out);
+	
 
 
 
