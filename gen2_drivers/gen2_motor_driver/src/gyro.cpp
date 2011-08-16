@@ -111,7 +111,7 @@ void gyroCallback(const gen2_motor_driver::pid_plot &msg_in)
 	imu_data.angular_velocity.z = -imu_data.angular_velocity.z;
 	orientation += imu_data.angular_velocity.z * dt;
 	KDL::Rotation rotation;
-	rotation.RotZ(imu_data.orientation.z);
+	rotation.RotZ(orientation);
 	rotation.GetQuaternion(imu_data.orientation.x, imu_data.orientation.y, imu_data.orientation.z, imu_data.orientation.w); 
 	
 	//Publish data
