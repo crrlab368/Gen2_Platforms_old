@@ -18,6 +18,7 @@
 using namespace std;
 
 ros::Publisher imu_pub;
+ros::Time last_time_global;
 
 
 class Gen2Gyro 
@@ -56,7 +57,6 @@ Gen2Gyro::Gen2Gyro()
 	boost::array<double,9> temp3 = {{-1,0,0,0,0,0,0,0,0}};
 	imu_data.linear_acceleration_covariance = temp3;
 	gyro_scale_correction = 1.35;
-	last_time = ros::Time::now();
 	
 	}
 
@@ -129,7 +129,8 @@ int main(int argc, char **argv)
 
    ros::Subscriber sub = n.subscribe("pid_plot", 1000, gyroCallback);
    imu_pub = n.advertise<sensor_msgs::Imu>("imu_data", 1000);
-   
+   last_time_global = ros::Time::now();
+   main_gyro.last_time = last_time_global;
    ros::spin();
 
  return 0;
