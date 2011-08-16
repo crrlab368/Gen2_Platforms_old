@@ -30,15 +30,15 @@ bool left_direction = true;
 
 //Control gain variables (default values set in main).
 double p_gain_l = 0;
-double i_gain_l = 0;
+double i_gain_l = 0.01;
 double d_gain_l = 0;
 double p_gain_r = 0;
-double i_gain_r = 0;
+double i_gain_r = 0.01;
 double d_gain_r = 0;
 
 //Control limit variables in PID.
-const int i_min = 0;
-const int i_max = 255;
+const double i_min = -2550;
+const double i_max = 2550;
 const int pwm_min = 0;
 const int pwm_max = 255; 
 
