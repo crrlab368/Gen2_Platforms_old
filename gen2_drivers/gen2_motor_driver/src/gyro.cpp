@@ -105,7 +105,7 @@ void gyroCallback(const gen2_motor_driver::pid_plot &msg_in)
 	double dt = (current_time - last_time).toSec();
 	double past_orientation = orientation;
 	imu_data.header.stamp = gyro_msg.header.stamp;
-	imu_data.angular_velocity.z = (float(gyro_msg.gyro_val) - cal_offset) / (cal_offset * 150.0 * (M_PI/180)) * gyro_scale_correction;
+	imu_data.angular_velocity.z = (float(gyro_msg.gyro_val)) / (150.0 * (M_PI/180)) * gyro_scale_correction;
 	
 	//sign change for z angular
 	imu_data.angular_velocity.z = -imu_data.angular_velocity.z;
@@ -118,6 +118,8 @@ void gyroCallback(const gen2_motor_driver::pid_plot &msg_in)
 	
 	//Publish data
 	imu_pub.publish(imu_data);
+
+	ROS_INFO("\n Cal Offset: %f", cal_offset);
   }
 
 
