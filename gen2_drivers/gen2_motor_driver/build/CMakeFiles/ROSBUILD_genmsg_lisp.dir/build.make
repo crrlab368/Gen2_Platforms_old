@@ -55,6 +55,7 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_encoder_gyro.lisp
 ../msg_gen/lisp/pid_plot.lisp: ../msg/pid_plot.msg
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/clients/roslisp/scripts/genmsg_lisp.py
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/ros/core/roslib/scripts/gendeps
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/messages/std_msgs/msg/Header.msg
 ../msg_gen/lisp/pid_plot.lisp: ../manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/ros/tools/rospack/manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/ros/core/roslib/manifest.xml

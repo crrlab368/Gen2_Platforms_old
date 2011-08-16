@@ -135,6 +135,8 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	gen2_motor_driver::pid_plot plot_out;
 	plot_out.left_vel = l_vel;
 	plot_out.right_vel = r_vel;
+	plot_out.gyro_val = msg_in.gyro_val;
+	plot_out.header.stamp = msg_in.header.stamp;
 
 	//Publishes pid_plot message.
 	pid_plot_pub.publish(plot_out);

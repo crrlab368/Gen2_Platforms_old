@@ -23,6 +23,8 @@ ros/message.h
 ../msg_gen/cpp/include/gen2_motor_driver/ros/message.h
 ros/time.h
 ../msg_gen/cpp/include/gen2_motor_driver/ros/time.h
+std_msgs/Header.h
+../msg_gen/cpp/include/gen2_motor_driver/std_msgs/Header.h
 
 /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/encoder_odom_node.cpp
 ros/ros.h

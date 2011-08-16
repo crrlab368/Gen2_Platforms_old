@@ -10,6 +10,7 @@
 #include "ros/message.h"
 #include "ros/time.h"
 
+#include "std_msgs/Header.h"
 
 namespace gen2_motor_driver
 {
@@ -19,22 +20,32 @@ struct pid_plot_ : public ros::Message
   typedef pid_plot_<ContainerAllocator> Type;
 
   pid_plot_()
-  : left_vel(0.0)
+  : header()
+  , left_vel(0.0)
   , right_vel(0.0)
+  , gyro_val(0)
   {
   }
 
   pid_plot_(const ContainerAllocator& _alloc)
-  : left_vel(0.0)
+  : header(_alloc)
+  , left_vel(0.0)
   , right_vel(0.0)
+  , gyro_val(0)
   {
   }
+
+  typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
+   ::std_msgs::Header_<ContainerAllocator>  header;
 
   typedef float _left_vel_type;
   float left_vel;
 
   typedef float _right_vel_type;
   float right_vel;
+
+  typedef int32_t _gyro_val_type;
+  int32_t gyro_val;
 
 
 private:
@@ -45,15 +56,35 @@ public:
   ROS_DEPRECATED const std::string __getDataType() const { return __s_getDataType_(); }
 
 private:
-  static const char* __s_getMD5Sum_() { return "74ad8f7ea4d888606e4f41069cec47ff"; }
+  static const char* __s_getMD5Sum_() { return "5612a4a535c3e74f157826b8bff1e050"; }
 public:
   ROS_DEPRECATED static const std::string __s_getMD5Sum() { return __s_getMD5Sum_(); }
 
   ROS_DEPRECATED const std::string __getMD5Sum() const { return __s_getMD5Sum_(); }
 
 private:
-  static const char* __s_getMessageDefinition_() { return "float32 left_vel\n\
+  static const char* __s_getMessageDefinition_() { return "Header header\n\
+float32 left_vel\n\
 float32 right_vel\n\
+int32 gyro_val\n\
+\n\
+================================================================================\n\
+MSG: std_msgs/Header\n\
+# Standard metadata for higher-level stamped data types.\n\
+# This is generally used to communicate timestamped data \n\
+# in a particular coordinate frame.\n\
+# \n\
+# sequence ID: consecutively increasing ID \n\
+uint32 seq\n\
+#Two-integer timestamp that is expressed as:\n\
+# * stamp.secs: seconds (stamp_secs) since epoch\n\
+# * stamp.nsecs: nanoseconds since stamp_secs\n\
+# time-handling sugar is provided by the client library\n\
+time stamp\n\
+#Frame this data is associated with\n\
+# 0: no frame\n\
+# 1: global frame\n\
+string frame_id\n\
 \n\
 "; }
 public:
@@ -64,24 +95,30 @@ public:
   ROS_DEPRECATED virtual uint8_t *serialize(uint8_t *write_ptr, uint32_t seq) const
   {
     ros::serialization::OStream stream(write_ptr, 1000000000);
+    ros::serialization::serialize(stream, header);
     ros::serialization::serialize(stream, left_vel);
     ros::serialization::serialize(stream, right_vel);
+    ros::serialization::serialize(stream, gyro_val);
     return stream.getData();
   }
 
   ROS_DEPRECATED virtual uint8_t *deserialize(uint8_t *read_ptr)
   {
     ros::serialization::IStream stream(read_ptr, 1000000000);
+    ros::serialization::deserialize(stream, header);
     ros::serialization::deserialize(stream, left_vel);
     ros::serialization::deserialize(stream, right_vel);
+    ros::serialization::deserialize(stream, gyro_val);
     return stream.getData();
   }
 
   ROS_DEPRECATED virtual uint32_t serializationLength() const
   {
     uint32_t size = 0;
+    size += ros::serialization::serializationLength(header);
     size += ros::serialization::serializationLength(left_vel);
     size += ros::serialization::serializationLength(right_vel);
+    size += ros::serialization::serializationLength(gyro_val);
     return size;
   }
 
@@ -110,12 +147,12 @@ template<class ContainerAllocator>
 struct MD5Sum< ::gen2_motor_driver::pid_plot_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "74ad8f7ea4d888606e4f41069cec47ff";
+    return "5612a4a535c3e74f157826b8bff1e050";
   }
 
   static const char* value(const  ::gen2_motor_driver::pid_plot_<ContainerAllocator> &) { return value(); } 
-  static const uint64_t static_value1 = 0x74ad8f7ea4d88860ULL;
-  static const uint64_t static_value2 = 0x6e4f41069cec47ffULL;
+  static const uint64_t static_value1 = 0x5612a4a535c3e74fULL;
+  static const uint64_t static_value2 = 0x157826b8bff1e050ULL;
 };
 
 template<class ContainerAllocator>
@@ -132,8 +169,28 @@ template<class ContainerAllocator>
 struct Definition< ::gen2_motor_driver::pid_plot_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "float32 left_vel\n\
+    return "Header header\n\
+float32 left_vel\n\
 float32 right_vel\n\
+int32 gyro_val\n\
+\n\
+================================================================================\n\
+MSG: std_msgs/Header\n\
+# Standard metadata for higher-level stamped data types.\n\
+# This is generally used to communicate timestamped data \n\
+# in a particular coordinate frame.\n\
+# \n\
+# sequence ID: consecutively increasing ID \n\
+uint32 seq\n\
+#Two-integer timestamp that is expressed as:\n\
+# * stamp.secs: seconds (stamp_secs) since epoch\n\
+# * stamp.nsecs: nanoseconds since stamp_secs\n\
+# time-handling sugar is provided by the client library\n\
+time stamp\n\
+#Frame this data is associated with\n\
+# 0: no frame\n\
+# 1: global frame\n\
+string frame_id\n\
 \n\
 ";
   }
@@ -141,7 +198,8 @@ float32 right_vel\n\
   static const char* value(const  ::gen2_motor_driver::pid_plot_<ContainerAllocator> &) { return value(); } 
 };
 
-template<class ContainerAllocator> struct IsFixedSize< ::gen2_motor_driver::pid_plot_<ContainerAllocator> > : public TrueType {};
+template<class ContainerAllocator> struct HasHeader< ::gen2_motor_driver::pid_plot_<ContainerAllocator> > : public TrueType {};
+template<class ContainerAllocator> struct HasHeader< const ::gen2_motor_driver::pid_plot_<ContainerAllocator> > : public TrueType {};
 } // namespace message_traits
 } // namespace ros
 
@@ -154,8 +212,10 @@ template<class ContainerAllocator> struct Serializer< ::gen2_motor_driver::pid_p
 {
   template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
   {
+    stream.next(m.header);
     stream.next(m.left_vel);
     stream.next(m.right_vel);
+    stream.next(m.gyro_val);
   }
 
   ROS_DECLARE_ALLINONE_SERIALIZER;
@@ -173,10 +233,15 @@ struct Printer< ::gen2_motor_driver::pid_plot_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const  ::gen2_motor_driver::pid_plot_<ContainerAllocator> & v) 
   {
+    s << indent << "header: ";
+s << std::endl;
+    Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
     s << indent << "left_vel: ";
     Printer<float>::stream(s, indent + "  ", v.left_vel);
     s << indent << "right_vel: ";
     Printer<float>::stream(s, indent + "  ", v.right_vel);
+    s << indent << "gyro_val: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.gyro_val);
   }
 };
 

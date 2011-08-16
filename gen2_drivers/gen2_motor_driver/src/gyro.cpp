@@ -31,11 +31,12 @@ double cal_buffer_length;
 sensor_msgs::Imu imu_data;
 sensor_msgs::Imu imu_raw;
 double gyro_scale_correction;
+ros::Time last_time;
 
-void update_cal(gen2_motor_driver::pid_plot vel_msg, int analog_in);
-void publish(gen2_motor_driver::pid_plot vel_msg, gen2_motor_driver::encoder_gyro gyro_msg, ros::Time last_time);
+void update_cal(gen2_motor_driver::pid_plot vel_msg);
+void publish(gen2_motor_driver::pid_plot gyro_msg);
 
-};
+} main_gyro;
 
 
 
@@ -55,17 +56,18 @@ Gen2Gyro::Gen2Gyro()
 	boost::array<double,9> temp3 = {{-1,0,0,0,0,0,0,0,0}};
 	imu_data.linear_acceleration_covariance = temp3;
 	gyro_scale_correction = 1.35;
+	last_time = ros::Time::now();
 	
 	}
 
- void Gen2Gyro::update_cal(gen2_motor_driver::pid_plot vel_msg, int analog_in) 
+ void Gen2Gyro::update_cal(gen2_motor_driver::pid_plot vel_msg) 
 
 {
  if(vel_msg.left_vel == 0.0 && vel_msg.right_vel == 0.0) 
   {	
 	int sum = 0;
 
-	cal_buffer.push_back(analog_in);
+	cal_buffer.push_back(vel_msg.gyro_val);
 
 	if(cal_buffer.size() > cal_buffer_length)
 	{
@@ -84,14 +86,15 @@ Gen2Gyro::Gen2Gyro()
 
 }
 
-void gyroCallback(const gen2_motor_driver::encoder_gyro &msg_in)
+void gyroCallback(const gen2_motor_driver::pid_plot &msg_in)
 {
-  //do stuff here
+	main_gyro.update_cal(msg_in);
+	main_gyro.publish(msg_in); 
 }
 
 
 
- void Gen2Gyro::publish(gen2_motor_driver::pid_plot vel_msg, gen2_motor_driver::encoder_gyro gyro_msg, ros::Time last_time)
+ void Gen2Gyro::publish(gen2_motor_driver::pid_plot gyro_msg)
   {
 	if(cal_offset == 0)
 	{
@@ -124,7 +127,7 @@ int main(int argc, char **argv)
 
    ros::NodeHandle n;
 
-   ros::Subscriber sub = n.subscribe("encoder_gyro", 1000, gyroCallback);
+   ros::Subscriber sub = n.subscribe("pid_plot", 1000, gyroCallback);
    imu_pub = n.advertise<sensor_msgs::Imu>("imu_data", 1000);
    
    ros::spin();
