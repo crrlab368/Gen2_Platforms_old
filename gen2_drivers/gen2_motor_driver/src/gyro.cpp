@@ -109,7 +109,7 @@ void gyroCallback(const gen2_motor_driver::pid_plot &msg_in)
 	
 	//sign change for z angular
 	imu_data.angular_velocity.z = -imu_data.angular_velocity.z;
-	imu_data.orientation.z += imu_data.angular_velocity.z * dt;
+	orientation += imu_data.angular_velocity.z * dt;
 	KDL::Rotation rotation;
 	rotation.RotZ(orientation);
 	KDL::Vector tempVec = rotation.GetRot();
