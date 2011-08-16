@@ -17,6 +17,9 @@
 
 using namespace std;
 
+ros::Publisher imu_pub;
+
+
 class Gen2Gyro 
 {
 public:
@@ -33,6 +36,9 @@ void update_cal(gen2_motor_driver::pid_plot vel_msg, int analog_in);
 void publish(gen2_motor_driver::pid_plot vel_msg, gen2_motor_driver::encoder_gyro gyro_msg, ros::Time last_time);
 
 };
+
+
+
 
 Gen2Gyro::Gen2Gyro()
 	{
@@ -78,6 +84,13 @@ Gen2Gyro::Gen2Gyro()
 
 }
 
+void gyroCallback(const gen2_motor_driver::encoder_gyro &msg_in)
+{
+  //do stuff here
+}
+
+
+
  void Gen2Gyro::publish(gen2_motor_driver::pid_plot vel_msg, gen2_motor_driver::encoder_gyro gyro_msg, ros::Time last_time)
   {
 	if(cal_offset == 0)
@@ -97,12 +110,24 @@ Gen2Gyro::Gen2Gyro()
 	KDL::Rotation rotation;
 	rotation.RotZ(imu_data.orientation.z);
 	rotation.GetQuaternion(imu_data.orientation.x, imu_data.orientation.y, imu_data.orientation.z, imu_data.orientation.w); 
+	
+	//Publish data
+	imu_pub.publish(imu_data);
   }
+
+
 
 
 int main(int argc, char **argv)
 {
+   ros::init(argc, argv, "gyro_node");
 
+   ros::NodeHandle n;
+
+   ros::Subscriber sub = n.subscribe("encoder_gyro", 1000, gyroCallback);
+   imu_pub = n.advertise<sensor_msgs::Imu>("imu_data", 1000);
+   
+   ros::spin();
 
  return 0;
 }

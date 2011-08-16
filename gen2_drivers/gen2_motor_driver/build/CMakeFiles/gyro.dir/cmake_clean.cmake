@@ -3,8 +3,8 @@ FILE(REMOVE_RECURSE
   "../src/gen2_motor_driver/msg"
   "../msg_gen"
   "CMakeFiles/gyro.dir/src/gyro.o"
-  "../lib/libgyro.pdb"
-  "../lib/libgyro.so"
+  "../bin/gyro.pdb"
+  "../bin/gyro"
 )
 
 # Per-language clean rules from dependency scanning.
