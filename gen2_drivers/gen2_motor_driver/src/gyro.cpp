@@ -6,14 +6,14 @@
 *raw gyro data being published in encoder_gyro.msg
 *************************************************************/
 #include "ros/ros.h"
-#include "gen2_motor_driver/encoder_gyro.h"
 #include "sensor_msgs/Imu.h"
 #include "geometry_msgs/Twist.h"
 #include "math.h"
 #include "gen2_motor_driver/pid_plot.h"
 #include "vector"
 #include "time.h"
-#include "kdl/frames.hpp"
+#include <tf/transform_broadcaster.h>
+
 
 using namespace std;
 
@@ -101,6 +101,7 @@ void gyroCallback(const gen2_motor_driver::pid_plot &msg_in)
 	return;
 	}
 
+	//Compute Z axis rotation
 	ros::Time current_time = gyro_msg.header.stamp;
 	double dt = (current_time - last_time).toSec();
 	double past_orientation = orientation;
@@ -110,16 +111,18 @@ void gyroCallback(const gen2_motor_driver::pid_plot &msg_in)
 	//sign change for z angular
 	imu_data.angular_velocity.z = -imu_data.angular_velocity.z;
 	orientation += imu_data.angular_velocity.z * dt;
-	KDL::Rotation rotation;
-	rotation = rotation.RotZ(orientation);
-	//KDL::Vector tempVec = rotation.GetRot();
-	//imu_data.orientation.z = tempVec.z();
-	rotation.GetQuaternion(imu_data.orientation.x, imu_data.orientation.y, imu_data.orientation.z, imu_data.orientation.w); 
+
+	geometry_msgs::Quaternion gyro_quat = tf::createQuaternionMsgFromYaw(orientation);
+	imu_data.orientation = gyro_quat;
+
+	
+
+	
 	
 	//Publish data
 	imu_pub.publish(imu_data);
 
-	ROS_INFO("\n Cal Offset: %f", cal_offset);
+	ROS_INFO("\n Cal Offset: %f\n Radians: %f", cal_offset, orientation);
   }
 
 
