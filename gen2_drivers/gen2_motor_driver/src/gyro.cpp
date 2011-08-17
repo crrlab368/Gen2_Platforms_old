@@ -132,6 +132,7 @@ void gyroCallback(const gen2_motor_driver::pid_plot &msg_in)
 	imu_pub.publish(imu_data);
 
 	ROS_INFO("\n Cal Offset: %f\n Radians: %f", cal_offset, orientation);
+	last_time = current_time;
   }
 
 
