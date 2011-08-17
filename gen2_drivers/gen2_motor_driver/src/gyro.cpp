@@ -107,13 +107,15 @@ void gyroCallback(const gen2_motor_driver::pid_plot &msg_in)
 	double past_orientation = orientation;
 	imu_data.header.stamp = gyro_msg.header.stamp;
 	
-	double ang_vel = gyro_msg.gyro_val;
-	if(ang_vel < .05)
-	{
-		ang_vel = 0;
-	}
+	
  
-	imu_data.angular_velocity.z = ((float(ang_vel) -cal_offset) / cal_offset) * (150.0 * (M_PI/180)) * gyro_scale_correction;
+	imu_data.angular_velocity.z = ((float(gyro_msg.gyro_val) -cal_offset) / cal_offset) * (150.0 * (M_PI/180)) * gyro_scale_correction;
+
+	if (imu_data.angular_velocity.z <0.05)
+	{
+		imu_data.angular_velocity.z=0;
+	}
+	
 	
 	//sign change for z angular
 	imu_data.angular_velocity.z = -imu_data.angular_velocity.z;
