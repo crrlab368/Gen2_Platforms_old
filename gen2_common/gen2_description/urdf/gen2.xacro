@@ -96,27 +96,13 @@
 	</link>
 
 
-	<link name="odom_combined">
-		<inertial>
-			<mass value="1" />
-			<origin xyz=" 0 0 0" />
-			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
-		</inertial>
-
-		
-	</link>
-
 	<joint name="base_footprint_joint" type="fixed">
 		<origin xyz="0 0 0.15" rpy="0 0 0" />        
 		<parent link="base_footprint" />
 		<child link="base_link" />
 	</joint>
 
-	<joint name="odom_combined_joint" type="fixed">
-		<origin xyz="0 0 0.15" rpy="0 0 0" />        
-		<parent link="base_footprint" />
-		<child link="odom_combined" />
-	</joint>
+
 
 
 	<joint name="base_middle_joint" type="fixed">
