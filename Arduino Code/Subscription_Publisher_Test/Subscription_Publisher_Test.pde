@@ -170,13 +170,13 @@ void setup()
   attachInterrupt(4, countleft, RISING);
  
   //Start serial interface
-  Serial.begin(115200);
+  //Serial.begin(115200);
   
   
   //Setup ROS subscription service
-  /*nh.initNode();
+  nh.initNode();
   nh.subscribe(sub);
-  nh.advertise(encoder_gyro);*/
+  nh.advertise(encoder_gyro);
   
   
 }
@@ -184,7 +184,7 @@ void setup()
 void loop()
 {
   
-  direction_test();
+  //direction_test();
   //encoder_test();
   
   //set values to encoder_gyro message
@@ -194,16 +194,16 @@ void loop()
   encoder_gyro_msg.left_count = eleft.totaldistance();
   
   //Publish
-  /*unsigned long currentMillis = millis();
+  unsigned long currentMillis = millis();
   if(currentMillis-previousMillis > interval)
   {
     previousMillis = currentMillis;
     encoder_gyro.publish(&encoder_gyro_msg);
-  }*/
+  }
   
   
   //Look for new message
-   //nh.spinOnce();
+   nh.spinOnce();
    
 }
 
