@@ -13,7 +13,7 @@ double wheel_base = 0;
 ros::Time current_time, last_time;
 ros::Publisher odom_pub;
 
-geometry_msgs::TransformStamped odom_trans;
+//geometry_msgs::TransformStamped odom_trans;
 
 
 void velocityCallback(const gen2_motor_driver::pid_plot &pid_plot)
@@ -41,14 +41,14 @@ void velocityCallback(const gen2_motor_driver::pid_plot &pid_plot)
     	geometry_msgs::Quaternion odom_quat = tf::createQuaternionMsgFromYaw(th);
 
     	//first, we'll publish the transform over tf
-    	odom_trans.header.stamp = current_time;
+    	/*odom_trans.header.stamp = current_time;
     	odom_trans.header.frame_id = "odom";
     	odom_trans.child_frame_id = "base_footprint";
 
     	odom_trans.transform.translation.x = x;
     	odom_trans.transform.translation.y = y;
     	odom_trans.transform.translation.z = 0.0;
-    	odom_trans.transform.rotation = odom_quat;
+    	odom_trans.transform.rotation = odom_quat;*/
 
     	
 
@@ -90,7 +90,7 @@ int main(int argc, char **argv)
   ros::NodeHandle n;
   odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
 
-  tf::TransformBroadcaster odom_broadcaster;
+  //tf::TransformBroadcaster odom_broadcaster;
 
   //send the transform
   
@@ -100,7 +100,7 @@ int main(int argc, char **argv)
 
   	while(n.ok())
 	{	
-		odom_broadcaster.sendTransform(odom_trans);
+		//odom_broadcaster.sendTransform(odom_trans);
 		n.param("mot_con_node/wheel_base", wheel_base, 36.25);
 		ros::spinOnce();	
   	}
