@@ -168,7 +168,7 @@
 
 
 <joint name="top_fl_joint" type="fixed">
-    <origin xyz="0 0 0.0625" rpy="0 0 0" />
+    <origin xyz="0 0 0.1875" rpy="0 0 0" />
     <parent link="middle_fl_link" />
     <child link="top_fl_link" />
   </joint>
@@ -215,7 +215,7 @@
 
 
 <joint name="top_fr_joint" type="fixed">
-    <origin xyz="0 0 0.0625" rpy="0 0 0" />
+    <origin xyz="0 0 0.1875" rpy="0 0 0" />
     <parent link="middle_fr_link" />
     <child link="top_fr_link" />
   </joint>
@@ -267,7 +267,7 @@
 
 
 <joint name="top_rl_joint" type="fixed">
-    <origin xyz="0 0 0.0625" rpy="0 0 0" />
+    <origin xyz="0 0 0.1875" rpy="0 0 0" />
     <parent link="middle_rl_link" />
     <child link="top_rl_link" />
   </joint>
@@ -320,7 +320,7 @@
 
 
 <joint name="top_rr_joint" type="fixed">
-    <origin xyz="0 0 0.0625" rpy="0 0 0" />
+    <origin xyz="0 0 0.1875" rpy="0 0 0" />
     <parent link="middle_rr_link" />
     <child link="top_rr_link" />
   </joint>
