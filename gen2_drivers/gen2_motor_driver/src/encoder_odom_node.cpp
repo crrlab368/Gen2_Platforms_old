@@ -63,15 +63,15 @@ void velocityCallback(const gen2_motor_driver::pid_plot &pid_plot)
     	odom.pose.pose.position.z = 0.0;
     	odom.pose.pose.orientation = odom_quat;
 
-	boost::array<double, 36> covariance = {1e6, 0.0, 0.0, 0.0, 0.0, 0.0,
-			       0.0, 1e6, 0.0, 0.0, 0.0, 0.0,
+	boost::array<double, 36> covariance = {1e-09, 0.0, 0.0, 0.0, 0.0, 0.0,
+			       0.0, 0.001, 1e-09, 0.0, 0.0, 0.0,
 			       0.0, 0.0, 1e6, 0.0, 0.0, 0.0,
 			       0.0, 0.0, 0.0, 1e6, 0.0, 0.0,
  			       0.0, 0.0, 0.0, 0.0, 1e6, 0.0,
-			       0.0, 0.0, 0.0, 0.0, 0.0, 1e6};
+			       0.0, 0.0, 0.0, 0.0, 0.0, 1e-09};
 
 	odom.pose.covariance = covariance;
-
+	odom.twist.covariance = covariance;
     	//set the velocity
     	odom.child_frame_id = "base_footprint";
     	odom.twist.twist.linear.x = vx;
