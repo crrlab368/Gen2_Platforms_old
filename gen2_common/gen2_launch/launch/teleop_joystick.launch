@@ -1,5 +1,19 @@
+<!--Teleop/Joystick launch file (teleop_joystick.launch)
+Description:  Launches all nodes required for the ps3 joystick to function.  When launched, input from the 
+ps3 controller will be translated into a cdm_vel message.
+-->
+
 <launch>
-    <!-- Start joystick -->
-    <node pkg="joy" type="joy_node" name="joy_node" output="screen"/>
-    <node pkg="joy2twist" type="joy2twist.py" name="joy2twist" output="screen"/>
+	<!-- Launch PS3 joy node (joystick driver-->
+  	<node respawn="true" pkg="ps3joy"
+        	type="ps3_joy_node" name="PS3_turtle_joy" >
+    		<param name="dev" type="string" value="/dev/input/js0" />
+    		<param name="deadzone" value="0.12" />
+  	</node>
+
+	<!-- Start joy node -->
+	<node pkg="joy" type="joy_node" name="joy_node" output="screen"/>
+
+	<!-- Start joy2twist node -->
+	<node pkg="joy2twist" type="joy2twist.py" name="joy2twist" output="screen"/>
 </launch>

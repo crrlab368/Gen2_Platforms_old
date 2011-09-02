@@ -1,6 +1,10 @@
+<!--Motor controller launch file (motor_controller.launch)
+Description:  Launches all nodes required for the functionality of the drive chain.  After launch the robot 
+should be able to accept a cmd_vel message and carry it out automatically.
+-->
+
 <launch>
 
-	
 	<!-- Launch the serial node to communicate with the arduino -->
 	<node name="serial_node" pkg="rosserial_python" type="serial_node.py">
 		<!-- Specify USB port connected to arduino -->
@@ -28,5 +32,4 @@
 		<!-- Set distance between wheels -->
 		<param name ="wheel_base" value="36.25" type="double" />
 	</node>
-
 </launch>

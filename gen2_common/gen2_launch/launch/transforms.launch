@@ -1,9 +1,12 @@
-<launch>
-    <param name="robot_description" command="$(find xacro)/xacro.py '$(find
-        gen2_description)/urdf/gen2.xacro'" />
+<!--Launches the robot transforms buitl from the gen2.xacro file
+-->
 
-    <node pkg="robot_state_publisher" type="state_publisher"
-        name="robot_state_publisher" output="screen">
-        <param name="publish_frequency" type="double" value="50.0" />
-    </node>
+<launch>
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find
+		gen2_description)/urdf/gen2.xacro'" />
+
+	<node pkg="robot_state_publisher" type="state_publisher"
+		name="robot_state_publisher" output="screen">
+		<param name="publish_frequency" type="double" value="50.0" />
+	</node>
 </launch>

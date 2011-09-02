@@ -1,9 +1,15 @@
+<!--Launch Everything -->
+
+
 <launch>
 	<!-- Start static transforms -->
    	<include file="$(find gen2_launch)/launch/transforms.launch" />
 
 	<!-- Start the motor controller -->
 	<include file="$(find gen2_launch)/launch/motor_controller.launch" />
+
+	<!-- Start the motor controller -->
+	<include file="$(find gen2_launch)/launch/odom_ekf.launch" />
 
 	<!-- Start the teleop_joystick -->
 	<include file="$(find gen2_launch)/launch/teleop_joystick.launch" />
