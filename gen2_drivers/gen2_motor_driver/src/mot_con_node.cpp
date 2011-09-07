@@ -76,7 +76,7 @@ ros::Publisher pid_plot_pub;
 double wheel_velocity(int cur_enc, int prev_enc, double d_time, double wheel_circum)
 {
 	  //Calculate the number of encoder counts since the last message.
-	  int diff_enc = cur_enc-prev_enc;
+	  short int diff_enc = cur_enc-prev_enc;
 	  //Return the velocity in cm/s.  
 	  //Equation is # of counts * distance traveled per count * time adjustment to seconds.
 	  //Current publishing rate from Arduino is 100Hz or once every 10mS. Multiplication is to 
