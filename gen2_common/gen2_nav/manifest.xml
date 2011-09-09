@@ -1,0 +1,14 @@
+<package>
+  <description brief="gen2_nav">
+
+     gen2_nav
+
+  </description>
+  <author>OverKill</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/gen2_nav</url>
+
+</package>
+
+
