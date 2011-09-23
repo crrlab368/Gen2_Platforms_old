@@ -134,9 +134,9 @@ class CalibrateRobot:
             if rospy.is_shutdown():
                 exit(0)
             if angle > 0:
-                cmd.angular.z = -0.5
+                cmd.angular.z = -0.25
             else:
-                cmd.angular.z = 0.5
+                cmd.angular.z = 0.25
             self.cmd_pub.publish(cmd)
             rospy.sleep(0.05)
             with self.lock:
@@ -191,7 +191,7 @@ def main():
     imu_drift = robot.imu_drift()
     imu_corr = []
     odom_corr = []
-    for speed in (0.5, 0.7, 1.0, 1.3):
+    for speed in (0.25, 0.6, 1.0, 1.25):
         robot.align()
         (imu, odom) = robot.calibrate(speed, imu_drift)
         imu_corr.append(imu)
