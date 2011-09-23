@@ -35,7 +35,7 @@ void velocityCallback(const gen2_motor_driver::pid_plot &pid_plot)
 
     	x += delta_x;
     	y += delta_y;
-    	th += (delta_th * 1.019879747);
+    	th += (delta_th * 1);
 
 	//since all odometry is 6DOF we'll need a quaternion created from yaw
     	geometry_msgs::Quaternion odom_quat = tf::createQuaternionMsgFromYaw(th);
