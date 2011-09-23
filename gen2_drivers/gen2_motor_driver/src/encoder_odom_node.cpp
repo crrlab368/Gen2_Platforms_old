@@ -9,6 +9,7 @@ double y = 0.0;
 double th = 0.0;
 
 double wheel_base = 0;
+double encoder_scale_correction = 1.0;
 
 ros::Time current_time, last_time;
 ros::Publisher odom_pub;
@@ -35,7 +36,7 @@ void velocityCallback(const gen2_motor_driver::pid_plot &pid_plot)
 
     	x += delta_x;
     	y += delta_y;
-    	th += (delta_th * 1);
+    	th += (delta_th * encoder_scale_correction);
 
 	//since all odometry is 6DOF we'll need a quaternion created from yaw
     	geometry_msgs::Quaternion odom_quat = tf::createQuaternionMsgFromYaw(th);
