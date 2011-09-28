@@ -172,7 +172,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 
 	if(l_test > 0.2) 
 	{
-	vel_goal_l = l_vel + 0.2;
+	vel_goal_l = vel_goal_l - 0.2;
 	}
 
 	//Control loop for left wheel.
@@ -217,7 +217,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 
 	if(r_test > 0.2) 
 	{
-	vel_goal_r = r_vel + 0.2;
+	vel_goal_r = vel_goal_r - 0.2;
 	}
 
 	double r_diff = vel_goal_r - r_vel;
