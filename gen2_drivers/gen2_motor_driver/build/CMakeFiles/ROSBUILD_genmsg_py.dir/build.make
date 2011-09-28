@@ -72,6 +72,7 @@ CMakeFiles/ROSBUILD_genmsg_py: ../src/gen2_motor_driver/msg/__init__.py
 ../src/gen2_motor_driver/msg/_pid_plot.py: /opt/ros/diamondback/stacks/ros_comm/clients/rospy/manifest.xml
 ../src/gen2_motor_driver/msg/_pid_plot.py: /opt/ros/diamondback/ros/tools/rosclean/manifest.xml
 ../src/gen2_motor_driver/msg/_pid_plot.py: /opt/ros/diamondback/stacks/ros_comm/tools/rosgraph/manifest.xml
+../src/gen2_motor_driver/msg/_pid_plot.py: /opt/ros/diamondback/stacks/ros_comm/tools/rosparam/manifest.xml
 ../src/gen2_motor_driver/msg/_pid_plot.py: /opt/ros/diamondback/stacks/ros_comm/tools/rosmaster/manifest.xml
 ../src/gen2_motor_driver/msg/_pid_plot.py: /opt/ros/diamondback/stacks/ros_comm/tools/rosout/manifest.xml
 ../src/gen2_motor_driver/msg/_pid_plot.py: /opt/ros/diamondback/stacks/ros_comm/tools/roslaunch/manifest.xml
@@ -130,6 +131,7 @@ CMakeFiles/ROSBUILD_genmsg_py: ../src/gen2_motor_driver/msg/__init__.py
 ../src/gen2_motor_driver/msg/_drive_msg.py: /opt/ros/diamondback/stacks/ros_comm/clients/rospy/manifest.xml
 ../src/gen2_motor_driver/msg/_drive_msg.py: /opt/ros/diamondback/ros/tools/rosclean/manifest.xml
 ../src/gen2_motor_driver/msg/_drive_msg.py: /opt/ros/diamondback/stacks/ros_comm/tools/rosgraph/manifest.xml
+../src/gen2_motor_driver/msg/_drive_msg.py: /opt/ros/diamondback/stacks/ros_comm/tools/rosparam/manifest.xml
 ../src/gen2_motor_driver/msg/_drive_msg.py: /opt/ros/diamondback/stacks/ros_comm/tools/rosmaster/manifest.xml
 ../src/gen2_motor_driver/msg/_drive_msg.py: /opt/ros/diamondback/stacks/ros_comm/tools/rosout/manifest.xml
 ../src/gen2_motor_driver/msg/_drive_msg.py: /opt/ros/diamondback/stacks/ros_comm/tools/roslaunch/manifest.xml
@@ -189,6 +191,7 @@ CMakeFiles/ROSBUILD_genmsg_py: ../src/gen2_motor_driver/msg/__init__.py
 ../src/gen2_motor_driver/msg/_encoder_gyro.py: /opt/ros/diamondback/stacks/ros_comm/clients/rospy/manifest.xml
 ../src/gen2_motor_driver/msg/_encoder_gyro.py: /opt/ros/diamondback/ros/tools/rosclean/manifest.xml
 ../src/gen2_motor_driver/msg/_encoder_gyro.py: /opt/ros/diamondback/stacks/ros_comm/tools/rosgraph/manifest.xml
+../src/gen2_motor_driver/msg/_encoder_gyro.py: /opt/ros/diamondback/stacks/ros_comm/tools/rosparam/manifest.xml
 ../src/gen2_motor_driver/msg/_encoder_gyro.py: /opt/ros/diamondback/stacks/ros_comm/tools/rosmaster/manifest.xml
 ../src/gen2_motor_driver/msg/_encoder_gyro.py: /opt/ros/diamondback/stacks/ros_comm/tools/rosout/manifest.xml
 ../src/gen2_motor_driver/msg/_encoder_gyro.py: /opt/ros/diamondback/stacks/ros_comm/tools/roslaunch/manifest.xml

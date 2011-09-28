@@ -73,6 +73,7 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_encoder_gyro.lisp
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/clients/rospy/manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/ros/tools/rosclean/manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosgraph/manifest.xml
+../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosparam/manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosmaster/manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosout/manifest.xml
 ../msg_gen/lisp/pid_plot.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/roslaunch/manifest.xml
@@ -135,6 +136,7 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_encoder_gyro.lisp
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/clients/rospy/manifest.xml
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/ros/tools/rosclean/manifest.xml
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosgraph/manifest.xml
+../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosparam/manifest.xml
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosmaster/manifest.xml
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosout/manifest.xml
 ../msg_gen/lisp/drive_msg.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/roslaunch/manifest.xml
@@ -198,6 +200,7 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_encoder_gyro.lisp
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/clients/rospy/manifest.xml
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/ros/tools/rosclean/manifest.xml
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosgraph/manifest.xml
+../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosparam/manifest.xml
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosmaster/manifest.xml
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/rosout/manifest.xml
 ../msg_gen/lisp/encoder_gyro.lisp: /opt/ros/diamondback/stacks/ros_comm/tools/roslaunch/manifest.xml

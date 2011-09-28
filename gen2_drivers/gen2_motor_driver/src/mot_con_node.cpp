@@ -106,7 +106,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	right_direction = true;
 
 	//Pid only is aware of PWM values.  All velocities must be positive.
-	//Direction flags are used to keep track of motro direction.
+	//Direction flags are used to keep track of motor direction.
 	if (vel_goal_l < 0)
 	{
 		vel_goal_l = -vel_goal_l;
@@ -167,8 +167,19 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 
 	//Important part.
 
+	//limiting the step of the loop.
+	double l_test = vel_goal_l - l_vel;
+
+	if(l_test > 0.2) 
+	{
+	vel_goal_l = l_vel + 0.2;
+	}
+
 	//Control loop for left wheel.
 	double l_diff = vel_goal_l - l_vel;
+
+	
+
 	 
 	//Remember error state. 
 	iState_l += l_diff;
@@ -196,7 +207,19 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 
    	pwm_l = (int)(pTerm_l + iTerm_l + dTerm_l);
 
+
+
+
  	//Control loop for right wheel.
+
+	//limiting the step of the loop.
+	double r_test = vel_goal_r - r_vel;
+
+	if(r_test > 0.2) 
+	{
+	vel_goal_r = r_vel + 0.2;
+	}
+
 	double r_diff = vel_goal_r - r_vel;
  
 	//Remember error state. 
