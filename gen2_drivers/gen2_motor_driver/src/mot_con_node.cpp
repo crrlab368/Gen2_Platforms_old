@@ -167,13 +167,8 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 
 	//Important part.
 
-	//limiting the step of the loop.
-	double l_test = vel_goal_l - l_vel;
 
-	if(l_test > 0.2) 
-	{
-	vel_goal_l = vel_goal_l - 0.2;
-	}
+
 
 	//Control loop for left wheel.
 	double l_diff = vel_goal_l - l_vel;
@@ -212,13 +207,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 
  	//Control loop for right wheel.
 
-	//limiting the step of the loop.
-	double r_test = vel_goal_r - r_vel;
-
-	if(r_test > 0.2) 
-	{
-	vel_goal_r = vel_goal_r - 0.2;
-	}
+	
 
 	double r_diff = vel_goal_r - r_vel;
  
