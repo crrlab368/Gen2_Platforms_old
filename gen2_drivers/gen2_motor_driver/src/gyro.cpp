@@ -109,7 +109,7 @@ void gyroCallback(const gen2_motor_driver::pid_plot &msg_in)
 	
 	
  
-	imu_data.angular_velocity.z = ((float(gyro_msg.gyro_val) -cal_offset) / cal_offset) * (150.0 * (M_PI/180)) * gyro_scale_correction;
+	imu_data.angular_velocity.z = ((float(gyro_msg.gyro_val) -cal_offset) / cal_offset) * (300.0 * (M_PI/180)) * gyro_scale_correction;
 
 	if (abs(imu_data.angular_velocity.z) <0.08)
 	{
