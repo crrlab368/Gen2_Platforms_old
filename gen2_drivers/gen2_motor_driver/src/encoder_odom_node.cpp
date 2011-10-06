@@ -9,7 +9,7 @@ double y = 0.0;
 double th = 0.0;
 
 double wheel_base = 0;
-double encoder_scale_correction = 1.0;
+double encoder_scale_correction = 1.035677;
 
 ros::Time current_time, last_time;
 ros::Publisher odom_pub;
