@@ -5,7 +5,7 @@
 
 
   <!-- Follower nodelet -->
-  <node pkg="nodelet" type="nodelet" name="gen2_follower" args="load gen2_follower/G2PFollower openni_manager" respawn="true">
+  <node name="follower" pkg="gen2_follower" type="follower" />
     <param name="x_scale" value="7.0" />
     <param name="z_scale" value="2.0" />
     <param name="min_x" value="-0.2" />
