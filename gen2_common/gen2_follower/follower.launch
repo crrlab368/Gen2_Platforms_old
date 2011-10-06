@@ -5,7 +5,7 @@
 
 
   <!-- Follower nodelet -->
-  <node pkg="nodelet" type="nodelet" name="gen2_follower" args="load turtlebot_follower/TurtlebotFollower openni_manager" respawn="true">
+  <node pkg="nodelet" type="nodelet" name="gen2_follower" args="load gen2_follower/TurtlebotFollower openni_manager" respawn="true">
     <param name="x_scale" value="7.0" />
     <param name="z_scale" value="2.0" />
     <param name="min_x" value="-0.2" />
