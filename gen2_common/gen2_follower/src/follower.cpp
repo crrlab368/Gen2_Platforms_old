@@ -34,10 +34,10 @@
 #include <pcl_ros/point_cloud.h>
 #include <pcl/point_types.h>
 #include "dynamic_reconfigure/server.h"
-#include "turtlebot_follower/FollowerConfig.h"
+#include "gen2_follower/FollowerConfig.h"
 
 
-namespace turtlebot_follower
+namespace gen2_follower
 {
 typedef pcl::PointCloud<pcl::PointXYZ> PointCloud;
 
@@ -47,14 +47,14 @@ typedef pcl::PointCloud<pcl::PointXYZ> PointCloud;
  * from the kinect, processes them, and publishes command vel
  * messages.
  */
-class TurtlebotFollower : public nodelet::Nodelet 
+class G2PFollower : public nodelet::Nodelet 
 {
 public:
   /*!
    * @brief The constructor for the follower.
    * Constructor for the follower.
    */
-  TurtlebotFollower() : min_y_(0.1), max_y_(0.5),
+  G2PFollower() : min_y_(0.1), max_y_(0.5),
                         min_x_(-0.2), max_x_(0.2),
                         max_z_(0.8), goal_z_(0.6),
                         z_scale_(1.0), x_scale_(5.0) 
@@ -62,7 +62,7 @@ public:
     
   }
 
-  ~TurtlebotFollower()
+  ~G2PFollower()
   {
     delete srv_;
   }
@@ -79,7 +79,7 @@ private:
 
 
   // Dynamic reconfigure server
-  dynamic_reconfigure::Server<turtlebot_follower::FollowerConfig>* srv_;
+  dynamic_reconfigure::Server<gen2_follower::FollowerConfig>* srv_;
   
   /*!
    * @brief OnInit method from node handle.
@@ -100,15 +100,15 @@ private:
     private_nh.getParam("x_scale", x_scale_);
     
     cmdpub_ = nh.advertise<geometry_msgs::Twist> ("/cmd_vel", 1);
-    sub_= nh.subscribe<PointCloud>("/camera/depth/points", 1, &TurtlebotFollower::cloudcb, this);\
+    sub_= nh.subscribe<PointCloud>("/camera/depth/points", 1, &G2PFollower::cloudcb, this);\
 
-    srv_ = new dynamic_reconfigure::Server<turtlebot_follower::FollowerConfig>(private_nh);
-    dynamic_reconfigure::Server<turtlebot_follower::FollowerConfig>::CallbackType f = boost::bind(&TurtlebotFollower::reconfigure, this, _1, _2);
+    srv_ = new dynamic_reconfigure::Server<gen2_follower::FollowerConfig>(private_nh);
+    dynamic_reconfigure::Server<gen2_follower::FollowerConfig>::CallbackType f = boost::bind(&G2PFollower::reconfigure, this, _1, _2);
     srv_->setCallback(f);
 
   }
 
-  void reconfigure(turtlebot_follower::FollowerConfig &config, uint32_t level)
+  void reconfigure(gen2_follower::FollowerConfig &config, uint32_t level)
   {
     min_y_ = config.min_y;
     max_y_ = config.max_y;
@@ -181,6 +181,6 @@ private:
   ros::Publisher cmdpub_;
 };
 
-PLUGINLIB_DECLARE_CLASS(turtlebot_follower, TurtlebotFollower, turtlebot_follower::TurtlebotFollower, nodelet::Nodelet);
+PLUGINLIB_DECLARE_CLASS(gen2_follower, G2PFollower, gen2_follower::G2PFollower, nodelet::Nodelet);
 
 }
