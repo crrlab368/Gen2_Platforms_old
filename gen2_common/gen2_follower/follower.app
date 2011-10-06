@@ -1,5 +1,5 @@
 display: Follower
-description: Take the TurtleBot for a stroll. TurtleBot will follow whatever is in front of it.
-platform: turtlebot
-launch: turtlebot_follower/follower.launch
+description: Take the G2P for a stroll. G2P will follow whatever is in front of it.
+platform: G2P
+launch: gen2_follower/follower.launch
 interface: turtlebot_follower/follower.interface
