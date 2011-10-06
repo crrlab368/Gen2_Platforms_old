@@ -56,7 +56,7 @@ Gen2Gyro::Gen2Gyro()
 	imu_data.angular_velocity_covariance = temp2;
 	boost::array<double,9> temp3 = {{-1,0,0,0,0,0,0,0,0}};
 	imu_data.linear_acceleration_covariance = temp3;
-	gyro_scale_correction = 0.923182;
+	gyro_scale_correction = 1.1;
 	
 	}
 

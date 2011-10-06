@@ -1,0 +1,1 @@
+It seems that as you decrease the gyro correction the dendancy is for it to under rotate on the map.  as it increases it over rotates.  Need to adjust calibration routine for faster starting speeds. 
