@@ -74,7 +74,7 @@ ros::Publisher drive_pub;
 ros::Publisher pid_plot_pub;
 
 //Velocity Average 
-const int arr_length = 30;
+const int arr_length = 15;
 double avg_vel_arr_lin [arr_length] = {0};
 double avg_vel_arr_ang [arr_length] = {0};
 double avg_vel_lin = 0;
@@ -114,6 +114,15 @@ void average_vel_filter()
 	
 	avg_vel_arr_lin[arr_length-1] = x;
 	avg_vel_arr_ang[arr_length-1] = z;
+
+	if (x==0)
+	{
+		memset(avg_vel_arr_lin,0,arr_length);	
+	}
+	if (z==0)
+	{
+		memset(avg_vel_arr_ang,0,arr_length);	
+	}
 
 	//Add last value
 	double sum_r = 0;
