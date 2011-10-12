@@ -50,9 +50,9 @@ Gen2Gyro::Gen2Gyro()
 	cal_buffer_length = 1000;
 	imu_data.header.frame_id = "gyro_link";
 
-	boost::array<double, 9> temp1 = {{1e6, 0, 0, 0, 1e6, 0, 0, 0, 1e-6}};
+	boost::array<double, 9> temp1 = {{1e6, 0, 0, 0, 1e6, 0, 0, 0, 1e-10}};
 	imu_data.orientation_covariance = temp1;
-	boost::array<double, 9> temp2 = {{1e6, 0, 0, 0, 1e6, 0, 0, 0, 1e-6}};
+	boost::array<double, 9> temp2 = {{1e6, 0, 0, 0, 1e6, 0, 0, 0, 1e-10}};
 	imu_data.angular_velocity_covariance = temp2;
 	boost::array<double,9> temp3 = {{-1,0,0,0,0,0,0,0,0}};
 	imu_data.linear_acceleration_covariance = temp3;
