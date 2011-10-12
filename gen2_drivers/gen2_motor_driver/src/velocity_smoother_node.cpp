@@ -25,8 +25,18 @@ void velocityCallback(const geometry_msgs::Twist &msg_vel_in)
 		avg_vel_arr_lin[i]=avg_vel_arr_lin[i+1];
 		avg_vel_arr_ang[i]=avg_vel_arr_ang[i+1];
 	}
+	
 	avg_vel_arr_lin[arr_length-1] = x;
 	avg_vel_arr_ang[arr_length-1] = z;
+
+	if (x==0)
+	{
+		memset(avg_vel_arr_lin,0,arr_length);	
+	}
+	if (z==0)
+	{
+		memset(avg_vel_arr_ang,0,arr_length);	
+	}
 
 	
 	double sum_r = 0;
