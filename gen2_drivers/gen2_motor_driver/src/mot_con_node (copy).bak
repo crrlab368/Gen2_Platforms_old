@@ -23,10 +23,8 @@ double dist_r = 0, dist_l = 0;
 double last_time = 0, current_time = 0, delta_time = 0;
 
 //Global target velocities.
-double x = 0;
-double z = 0;
-double vel_goal_l = 0;		
-double vel_goal_r = 0;		
+double vel_goal_l = 0;
+double vel_goal_r = 0;
 bool right_direction = true;
 bool left_direction = true;
 
@@ -73,14 +71,6 @@ const int enc_per_rev = 2031;
 ros::Publisher drive_pub;
 ros::Publisher pid_plot_pub;
 
-//Velocity Average 
-const int arr_length = 30;
-double avg_vel_arr_lin [arr_length] = {0};
-double avg_vel_arr_ang [arr_length] = {0};
-double avg_vel_lin = 0;
-double avg_vel_ang = 0;
-
-
 
 //Global function for calculating the current wheel velocity
 double wheel_velocity(int cur_enc, int prev_enc, double d_time, double wheel_circum)
@@ -98,35 +88,12 @@ double wheel_velocity(int cur_enc, int prev_enc, double d_time, double wheel_cir
 void velocityCallback(const geometry_msgs::Twist &msg_vel_in)
 {
 	//Get linear and angualr velocity from Twist message.
-	x = msg_vel_in.linear.x;
-	z = msg_vel_in.angular.z;
+	double x = msg_vel_in.linear.x;
+	double z = msg_vel_in.angular.z;
+	vel_goal_l = (100*x-((z*wheel_base)/2));  //multiply by 100 to translate into cm/s from m/s
+	vel_goal_r = (100*x+((z*wheel_base)/2));
 }
 
-
-void average_vel_filter()
-{
-	//Shift values
-	for (int i=0;i<arr_length-1;i++)
-	{
-		avg_vel_arr_lin[i]=avg_vel_arr_lin[i+1];
-		avg_vel_arr_ang[i]=avg_vel_arr_ang[i+1];
-	}
-	
-	avg_vel_arr_lin[arr_length-1] = x;
-	avg_vel_arr_ang[arr_length-1] = z;
-
-	//Add last value
-	double sum_r = 0;
-	double sum_l = 0;
-	for (int i=0;i<=arr_length-1;i++)
-	{
-		sum_r+=avg_vel_arr_lin[i];
-		sum_l+=avg_vel_arr_ang[i];
-	}
-
-	avg_vel_lin = sum_r/arr_length;
-	avg_vel_ang = sum_l/arr_length;
-}
 
 /*Function called when new encoder_gyro message arrives. This will check the current target 
  velocity defined in the global variables vel_goal_l and vel_goal_r then compare to the current
@@ -135,11 +102,6 @@ void average_vel_filter()
 */
 void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 {
-	average_vel_filter();
-	vel_goal_l = (100*avg_vel_lin-((avg_vel_ang*wheel_base)/2));  //multiply by 100 to translate into cm/s from m/s
-	vel_goal_r = (100*avg_vel_lin+((avg_vel_ang*wheel_base)/2));
-
-	
 	left_direction = true;
 	right_direction = true;
 
