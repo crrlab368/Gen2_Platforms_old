@@ -5,7 +5,7 @@
 
 
   <!-- Follower nodelet -->
-  <node name="follower" pkg="gen2_follower" type="follower" />
+  <node name="follower" pkg="gen2_follower" type="follower" >
     <param name="x_scale" value="7.0" />
     <param name="z_scale" value="2.0" />
     <param name="min_x" value="-0.2" />

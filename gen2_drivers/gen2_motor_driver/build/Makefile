@@ -358,6 +358,19 @@ tests/fast:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
+#=============================================================================
+# Target rules for targets named velocity_smoother
+
+# Build rule for target.
+velocity_smoother: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velocity_smoother
+.PHONY : velocity_smoother
+
+# fast build rule for target.
+velocity_smoother/fast:
+	$(MAKE) -f CMakeFiles/velocity_smoother.dir/build.make CMakeFiles/velocity_smoother.dir/build
+.PHONY : velocity_smoother/fast
+
 # target to build an object file
 src/encoder_odom_node.o:
 	$(MAKE) -f CMakeFiles/encoder_odom_node.dir/build.make CMakeFiles/encoder_odom_node.dir/src/encoder_odom_node.o
@@ -403,6 +416,21 @@ src/mot_con_node.s:
 	$(MAKE) -f CMakeFiles/mot_con_node.dir/build.make CMakeFiles/mot_con_node.dir/src/mot_con_node.s
 .PHONY : src/mot_con_node.s
 
+# target to build an object file
+src/velocity_smoother_node.o:
+	$(MAKE) -f CMakeFiles/velocity_smoother.dir/build.make CMakeFiles/velocity_smoother.dir/src/velocity_smoother_node.o
+.PHONY : src/velocity_smoother_node.o
+
+# target to preprocess a source file
+src/velocity_smoother_node.i:
+	$(MAKE) -f CMakeFiles/velocity_smoother.dir/build.make CMakeFiles/velocity_smoother.dir/src/velocity_smoother_node.i
+.PHONY : src/velocity_smoother_node.i
+
+# target to generate assembly for a file
+src/velocity_smoother_node.s:
+	$(MAKE) -f CMakeFiles/velocity_smoother.dir/build.make CMakeFiles/velocity_smoother.dir/src/velocity_smoother_node.s
+.PHONY : src/velocity_smoother_node.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -431,6 +459,7 @@ help:
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
+	@echo "... velocity_smoother"
 	@echo "... src/encoder_odom_node.o"
 	@echo "... src/encoder_odom_node.i"
 	@echo "... src/encoder_odom_node.s"
@@ -440,6 +469,9 @@ help:
 	@echo "... src/mot_con_node.o"
 	@echo "... src/mot_con_node.i"
 	@echo "... src/mot_con_node.s"
+	@echo "... src/velocity_smoother_node.o"
+	@echo "... src/velocity_smoother_node.i"
+	@echo "... src/velocity_smoother_node.s"
 .PHONY : help
 
 

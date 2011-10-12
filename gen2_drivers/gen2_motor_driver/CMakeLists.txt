@@ -24,6 +24,7 @@ rosbuild_genmsg()
 rosbuild_add_executable(mot_con_node src/mot_con_node.cpp)
 rosbuild_add_executable(encoder_odom_node src/encoder_odom_node.cpp)
 rosbuild_add_executable(gyro src/gyro.cpp)
+rosbuild_add_executable(velocity_smoother src/velocity_smoother_node.cpp)
 
 
 #rosbuild_add_library(gyro src/gyro.cpp)

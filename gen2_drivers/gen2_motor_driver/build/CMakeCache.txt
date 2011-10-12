@@ -183,7 +183,7 @@ TOOLCHAINCONFIG:FILEPATH=TOOLCHAINCONFIG-NOTFOUND
 USERCONFIG:FILEPATH=USERCONFIG-NOTFOUND
 
 //Path to a file.
-_file_name:FILEPATH=/home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/gyro.cpp
+_file_name:FILEPATH=/home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/velocity_smoother_node.cpp
 
 //Value Computed by CMake
 gen2_motor_driver_BINARY_DIR:STATIC=/home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build
