@@ -100,6 +100,14 @@ void velocityCallback(const geometry_msgs::Twist &msg_vel_in)
 	//Get linear and angualr velocity from Twist message.
 	x = msg_vel_in.linear.x;
 	z = msg_vel_in.angular.z;
+	
+	//Calculate Vth for cross-coupled control loop
+	double vth = ((r_vel/100)-(l_vel/100))/(wheel_base/100);
+	//Proportional control factor for cross-coupled vth 
+	double goal_Vth = z;
+	double actual_Vth = vth;
+	double error_th = z-vth;
+	z = z+error_th;
 }
 
 
@@ -187,6 +195,7 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 
 	//Publishes pid_plot message.
 	pid_plot_pub.publish(plot_out);
+	
 
 	//Calculates current distance traveled by each wheel. 
 	dist_l+=(l_vel/100)*delta_time;
@@ -314,6 +323,8 @@ void encoderCallback(const gen2_motor_driver::encoder_gyro &msg_in)
 	{
 		pwm_r = 0;
 	}
+
+
  
 	ROS_INFO("\nRight Encodder: %d\nLeft Encoder: %d\nRight Vel: %f\nRight Goal: %f\nLeft Vel: %f\nLeft Goal: %f\nRight Dist: %f\nLeft Dist: %f\nR_diff: %f\nL_diff:%f\nR_PWM: %d\nL_PWM: %d\nDelta_time: %f", msg_in.right_count,msg_in.left_count,r_vel,vel_goal_r,l_vel,vel_goal_l,dist_r,dist_l,r_diff,l_diff,pwm_r, pwm_l, delta_time);
 
