@@ -1,10 +1,12 @@
 local_costmap:
+#global could be odom_combined instead of map based on example from guide
   global_frame: /map
   robot_base_frame: /base_footprint
   update_frequency: 5.0
-  publish_frequency: 5.0
+  publish_frequency: 3.0
   static_map: true
   rolling_window: false
   width: 4.0
   height: 4.0
+#may need to play with this some more. 
   resolution: 0.1
