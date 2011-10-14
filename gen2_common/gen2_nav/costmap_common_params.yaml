@@ -4,6 +4,8 @@ raytrace_range: 3.0
 robot_radius: 0.4
 inflation_radius: 0.2
 
+lethal_cost_threshold: 100
+
 observation_sources: laser_scan_sensor
 
 laser_scan_sensor: {sensor_frame: /kinect_depth_frame, data_type: LaserScan, topic: /scan, marking: true, clearing: true}
