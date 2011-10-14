@@ -9,4 +9,4 @@ local_costmap:
   width: 4.0
   height: 4.0
 #may need to play with this some more. 
-  resolution: 0.1
+  resolution: 0.05
