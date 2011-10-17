@@ -7,7 +7,6 @@ raytrace_range: 3.0
 robot_radius: 0.4
 inflation_radius: 0.5
 
-lethal_cost_threshold: 100
 
 observation_sources: laser_scan_sensor
 

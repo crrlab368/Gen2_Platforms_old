@@ -12,5 +12,6 @@
     <rosparam file="$(find gen2_nav)/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find gen2_nav)/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find gen2_nav)/base_local_planner_params.yaml" command="load" />
+    <param name="controller_frequency" value="10"/>
   </node>
 </launch>
