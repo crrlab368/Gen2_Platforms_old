@@ -25,9 +25,21 @@ TrajectoryPlannerROS:
 #path_distance_bias: 0.6
 #occdist_scale: 0.01
 #heading_lookahead: 0.325
+#Added from turtlebot params
+
+  yaw_goal_tolerance: 0.3
+  xy_goal_tolerance: 0.15
+  goal_distance_bias: 0.8
+  path_distance_bias: 0.6
+  sim_time: 1.5
+  heading_lookahead: 0.325
+  oscillation_reset_dist: 0.05
+
+  vx_samples: 6
+  vtheta_samples: 20
 
 #We'll use the Dynamic Window Approach to control instead of Trajectory Rollout for this example
-dwa: true
+dwa: false
 #How far the robot must travel before oscillation flags are reset
 #oscillation_reset_dist: 0.05
 
