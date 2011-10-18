@@ -9,6 +9,13 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/gen2_launch</url>
   <depend package="gen2_description"/>
+  <depend package="joy2twist" />
+  <depend package="joy" />
+  <depend package="robot_state_publisher" />
+  <depend package="gen2_motor_driver" />
+  <depend package="rosserial_python" />
+  <depend package="robot_pose_ekf" />
+  
 
 </package>
 
