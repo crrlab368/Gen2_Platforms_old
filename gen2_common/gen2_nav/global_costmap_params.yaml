@@ -1,8 +1,9 @@
 global_costmap:
   global_frame: /map
-  robot_base_frame: /base_footprint
+#changed from base_footprint as an experiment
+  robot_base_frame: /odom_combined
   update_frequency: 3.0
   publish_frequency: 0.0
   static_map: true
   rolling_window: false
-  transform_tolerance: 0.8
+  transform_tolerance: 1.2
