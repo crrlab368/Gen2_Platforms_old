@@ -9,5 +9,5 @@ local_costmap:
   width: 4.0
   height: 4.0
 #may need to play with this some more. 
-  resolution: 0.5
-  transform_tolerance: 0.5
+  resolution: 0.01
+  transform_tolerance: 0.8
