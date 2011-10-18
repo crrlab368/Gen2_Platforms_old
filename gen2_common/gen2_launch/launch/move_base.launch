@@ -1,5 +1,5 @@
 <launch>
-  <master auto="start"/>
+  <!-- <master auto="start"/> -->
   
 
   <!--- Run AMCL -->
