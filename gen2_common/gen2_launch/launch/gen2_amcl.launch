@@ -36,7 +36,7 @@
   <remap from="scan" to="narrow_scan"/>
   <param name="use_map_topic" value="true" />
   <param name="base_frame_id" value="/base_footprint" />
-  <!-- param name="global_frame_id" value="/map" /> -->
+  <param name="global_frame_id" value="/map" />
   
   
   
