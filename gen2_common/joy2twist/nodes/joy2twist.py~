@@ -15,7 +15,7 @@ import roslib; roslib.load_manifest('joy2twist')
 import rospy
 
 # ROS msg and srv imports
-from sensor_msgs.msg import Joy
+from joy.msg import Joy
 from geometry_msgs.msg import Twist
 
 # Python Libraries

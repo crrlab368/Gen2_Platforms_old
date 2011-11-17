@@ -3,20 +3,23 @@
 #define GEN2_MOTOR_DRIVER_MESSAGE_PID_PLOT_H
 #include <string>
 #include <vector>
+#include <map>
 #include <ostream>
 #include "ros/serialization.h"
 #include "ros/builtin_message_traits.h"
 #include "ros/message_operations.h"
-#include "ros/message.h"
 #include "ros/time.h"
+
+#include "ros/macros.h"
+
+#include "ros/assert.h"
 
 #include "std_msgs/Header.h"
 
 namespace gen2_motor_driver
 {
 template <class ContainerAllocator>
-struct pid_plot_ : public ros::Message
-{
+struct pid_plot_ {
   typedef pid_plot_<ContainerAllocator> Type;
 
   pid_plot_()
@@ -124,6 +127,7 @@ public:
 
   typedef boost::shared_ptr< ::gen2_motor_driver::pid_plot_<ContainerAllocator> > Ptr;
   typedef boost::shared_ptr< ::gen2_motor_driver::pid_plot_<ContainerAllocator>  const> ConstPtr;
+  boost::shared_ptr<std::map<std::string, std::string> > __connection_header;
 }; // struct pid_plot
 typedef  ::gen2_motor_driver::pid_plot_<std::allocator<void> > pid_plot;
 
@@ -143,6 +147,8 @@ namespace ros
 {
 namespace message_traits
 {
+template<class ContainerAllocator> struct IsMessage< ::gen2_motor_driver::pid_plot_<ContainerAllocator> > : public TrueType {};
+template<class ContainerAllocator> struct IsMessage< ::gen2_motor_driver::pid_plot_<ContainerAllocator>  const> : public TrueType {};
 template<class ContainerAllocator>
 struct MD5Sum< ::gen2_motor_driver::pid_plot_<ContainerAllocator> > {
   static const char* value() 

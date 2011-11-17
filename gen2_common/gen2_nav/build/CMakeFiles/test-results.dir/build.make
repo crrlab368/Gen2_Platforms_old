@@ -43,7 +43,7 @@ CMAKE_BINARY_DIR = /home/overkill/devel/ros/Gen2_Platforms/gen2_common/gen2_nav/
 # Utility rule file for test-results.
 
 CMakeFiles/test-results:
-	/opt/ros/diamondback/ros/tools/rosunit/scripts/summarize_results.py --nodeps gen2_nav
+	/opt/ros/electric/ros/tools/rosunit/scripts/summarize_results.py --nodeps gen2_nav
 
 test-results: CMakeFiles/test-results
 test-results: CMakeFiles/test-results.dir/build.make

@@ -64,8 +64,8 @@ bool right_dir
     try:
       _x = self
       buff.write(_struct_2i2B.pack(_x.left_pwm, _x.right_pwm, _x.left_dir, _x.right_dir))
-    except struct.error, se: self._check_types(se)
-    except TypeError, te: self._check_types(te)
+    except struct.error as se: self._check_types(se)
+    except TypeError as te: self._check_types(te)
 
   def deserialize(self, str):
     """
@@ -82,7 +82,7 @@ bool right_dir
       self.left_dir = bool(self.left_dir)
       self.right_dir = bool(self.right_dir)
       return self
-    except struct.error, e:
+    except struct.error as e:
       raise roslib.message.DeserializationError(e) #most likely buffer underfill
 
 
@@ -97,8 +97,8 @@ bool right_dir
     try:
       _x = self
       buff.write(_struct_2i2B.pack(_x.left_pwm, _x.right_pwm, _x.left_dir, _x.right_dir))
-    except struct.error, se: self._check_types(se)
-    except TypeError, te: self._check_types(te)
+    except struct.error as se: self._check_types(se)
+    except TypeError as te: self._check_types(te)
 
   def deserialize_numpy(self, str, numpy):
     """
@@ -117,7 +117,7 @@ bool right_dir
       self.left_dir = bool(self.left_dir)
       self.right_dir = bool(self.right_dir)
       return self
-    except struct.error, e:
+    except struct.error as e:
       raise roslib.message.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = roslib.message.struct_I

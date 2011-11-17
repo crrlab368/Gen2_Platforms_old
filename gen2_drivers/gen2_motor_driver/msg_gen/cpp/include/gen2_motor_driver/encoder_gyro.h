@@ -3,20 +3,23 @@
 #define GEN2_MOTOR_DRIVER_MESSAGE_ENCODER_GYRO_H
 #include <string>
 #include <vector>
+#include <map>
 #include <ostream>
 #include "ros/serialization.h"
 #include "ros/builtin_message_traits.h"
 #include "ros/message_operations.h"
-#include "ros/message.h"
 #include "ros/time.h"
+
+#include "ros/macros.h"
+
+#include "ros/assert.h"
 
 #include "std_msgs/Header.h"
 
 namespace gen2_motor_driver
 {
 template <class ContainerAllocator>
-struct encoder_gyro_ : public ros::Message
-{
+struct encoder_gyro_ {
   typedef encoder_gyro_<ContainerAllocator> Type;
 
   encoder_gyro_()
@@ -124,6 +127,7 @@ public:
 
   typedef boost::shared_ptr< ::gen2_motor_driver::encoder_gyro_<ContainerAllocator> > Ptr;
   typedef boost::shared_ptr< ::gen2_motor_driver::encoder_gyro_<ContainerAllocator>  const> ConstPtr;
+  boost::shared_ptr<std::map<std::string, std::string> > __connection_header;
 }; // struct encoder_gyro
 typedef  ::gen2_motor_driver::encoder_gyro_<std::allocator<void> > encoder_gyro;
 
@@ -143,6 +147,8 @@ namespace ros
 {
 namespace message_traits
 {
+template<class ContainerAllocator> struct IsMessage< ::gen2_motor_driver::encoder_gyro_<ContainerAllocator> > : public TrueType {};
+template<class ContainerAllocator> struct IsMessage< ::gen2_motor_driver::encoder_gyro_<ContainerAllocator>  const> : public TrueType {};
 template<class ContainerAllocator>
 struct MD5Sum< ::gen2_motor_driver::encoder_gyro_<ContainerAllocator> > {
   static const char* value() 

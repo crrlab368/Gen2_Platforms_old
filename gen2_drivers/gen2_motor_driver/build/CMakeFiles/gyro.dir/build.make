@@ -52,68 +52,69 @@ include CMakeFiles/gyro.dir/flags.make
 CMakeFiles/gyro.dir/src/gyro.o: CMakeFiles/gyro.dir/flags.make
 CMakeFiles/gyro.dir/src/gyro.o: ../src/gyro.cpp
 CMakeFiles/gyro.dir/src/gyro.o: ../manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/ros/tools/rospack/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/ros/core/roslib/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/messages/std_msgs/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/ros/core/rosbuild/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/ros/core/roslang/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/utilities/cpp_common/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp_traits/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/utilities/rostime/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp_serialization/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/utilities/xmlrpcpp/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosconsole/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/messages/rosgraph_msgs/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/clients/rospy/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/ros/tools/rosclean/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosgraph/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosparam/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosmaster/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosout/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/roslaunch/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/ros/tools/rosunit/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/rostest/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/topic_tools/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosbag/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosbagmigration/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/common_msgs/geometry_msgs/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/geometry/eigen/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/geometry/kdl/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/geometry/bullet/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/geometry/angles/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosnode/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosmsg/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/rostopic/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/rosservice/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/utilities/roswtf/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/utilities/message_filters/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/geometry/tf/manifest.xml
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/messages/std_msgs/msg_gen/generated
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/srv_gen/generated
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/ros_comm/tools/topic_tools/srv_gen/generated
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/common_msgs/geometry_msgs/msg_gen/generated
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/msg_gen/generated
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/common_msgs/nav_msgs/srv_gen/generated
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/msg_gen/generated
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/common_msgs/sensor_msgs/srv_gen/generated
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/geometry/tf/msg_gen/generated
-CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/diamondback/stacks/geometry/tf/srv_gen/generated
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/ros/tools/rospack/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/ros/core/roslib/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/ros/core/rosbuild/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/ros/core/roslang/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/utilities/cpp_common/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp_traits/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/utilities/rostime/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp_serialization/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/utilities/xmlrpcpp/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/rosconsole/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/clients/rospy/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/ros/tools/rosclean/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/rosgraph/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/rosparam/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/rosmaster/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/rosout/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/roslaunch/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/ros/tools/rosunit/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/rostest/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/topic_tools/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/rosbag/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/rosbagmigration/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/common_msgs/nav_msgs/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/orocos_kinematics_dynamics/orocos_kdl/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/orocos_kinematics_dynamics/python_orocos_kdl/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/orocos_kinematics_dynamics/kdl/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/bullet/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/geometry/angles/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/rosnode/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/rosmsg/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/rostopic/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/rosservice/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/utilities/roswtf/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/geometry/tf/manifest.xml
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/srv_gen/generated
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/ros_comm/tools/topic_tools/srv_gen/generated
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/common_msgs/nav_msgs/msg_gen/generated
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/common_msgs/nav_msgs/srv_gen/generated
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/geometry/tf/msg_gen/generated
+CMakeFiles/gyro.dir/src/gyro.o: /opt/ros/electric/stacks/geometry/tf/srv_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/gyro.dir/src/gyro.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DEIGEN_USE_NEW_STDVECTOR -DEIGEN2_SUPPORT -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/gyro.dir/src/gyro.o -c /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/gyro.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/gyro.dir/src/gyro.o -c /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/gyro.cpp
 
 CMakeFiles/gyro.dir/src/gyro.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gyro.dir/src/gyro.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DEIGEN_USE_NEW_STDVECTOR -DEIGEN2_SUPPORT -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/gyro.cpp > CMakeFiles/gyro.dir/src/gyro.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/gyro.cpp > CMakeFiles/gyro.dir/src/gyro.i
 
 CMakeFiles/gyro.dir/src/gyro.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gyro.dir/src/gyro.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DEIGEN_USE_NEW_STDVECTOR -DEIGEN2_SUPPORT -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/gyro.cpp -o CMakeFiles/gyro.dir/src/gyro.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/src/gyro.cpp -o CMakeFiles/gyro.dir/src/gyro.s
 
 CMakeFiles/gyro.dir/src/gyro.o.requires:
 .PHONY : CMakeFiles/gyro.dir/src/gyro.o.requires
@@ -123,7 +124,6 @@ CMakeFiles/gyro.dir/src/gyro.o.provides: CMakeFiles/gyro.dir/src/gyro.o.requires
 .PHONY : CMakeFiles/gyro.dir/src/gyro.o.provides
 
 CMakeFiles/gyro.dir/src/gyro.o.provides.build: CMakeFiles/gyro.dir/src/gyro.o
-.PHONY : CMakeFiles/gyro.dir/src/gyro.o.provides.build
 
 # Object files for target gyro
 gyro_OBJECTS = \

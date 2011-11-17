@@ -43,7 +43,7 @@ CMAKE_BINARY_DIR = /home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_mot
 # Utility rule file for test-results.
 
 CMakeFiles/test-results:
-	/opt/ros/diamondback/ros/tools/rosunit/scripts/summarize_results.py --nodeps gen2_motor_driver
+	/opt/ros/electric/ros/tools/rosunit/scripts/summarize_results.py --nodeps gen2_motor_driver
 
 test-results: CMakeFiles/test-results
 test-results: CMakeFiles/test-results.dir/build.make
