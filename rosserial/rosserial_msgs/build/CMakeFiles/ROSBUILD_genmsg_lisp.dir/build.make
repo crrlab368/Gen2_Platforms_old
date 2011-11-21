@@ -47,12 +47,12 @@ CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package.lisp
 CMakeFiles/ROSBUILD_genmsg_lisp: ../msg_gen/lisp/_package_TopicInfo.lisp
 
 ../msg_gen/lisp/TopicInfo.lisp: ../msg/TopicInfo.msg
-../msg_gen/lisp/TopicInfo.lisp: /opt/ros/diamondback/stacks/ros_comm/clients/roslisp/scripts/genmsg_lisp.py
-../msg_gen/lisp/TopicInfo.lisp: /opt/ros/diamondback/ros/core/roslib/scripts/gendeps
+../msg_gen/lisp/TopicInfo.lisp: /opt/ros/electric/stacks/ros_comm/clients/roslisp/scripts/genmsg_lisp.py
+../msg_gen/lisp/TopicInfo.lisp: /opt/ros/electric/ros/core/roslib/scripts/gendeps
 ../msg_gen/lisp/TopicInfo.lisp: ../manifest.xml
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/lisp/TopicInfo.lisp, ../msg_gen/lisp/_package.lisp, ../msg_gen/lisp/_package_TopicInfo.lisp"
-	/opt/ros/diamondback/stacks/ros_comm/clients/roslisp/scripts/genmsg_lisp.py /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/msg/TopicInfo.msg
+	/opt/ros/electric/stacks/ros_comm/clients/roslisp/scripts/genmsg_lisp.py /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/msg/TopicInfo.msg
 
 ../msg_gen/lisp/_package.lisp: ../msg_gen/lisp/TopicInfo.lisp
 

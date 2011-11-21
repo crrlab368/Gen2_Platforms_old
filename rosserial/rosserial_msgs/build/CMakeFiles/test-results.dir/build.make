@@ -43,7 +43,7 @@ CMAKE_BINARY_DIR = /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_m
 # Utility rule file for test-results.
 
 CMakeFiles/test-results:
-	/opt/ros/diamondback/ros/tools/rosunit/scripts/summarize_results.py --nodeps rosserial_msgs
+	/opt/ros/electric/ros/tools/rosunit/scripts/summarize_results.py --nodeps rosserial_msgs
 
 test-results: CMakeFiles/test-results
 test-results: CMakeFiles/test-results.dir/build.make

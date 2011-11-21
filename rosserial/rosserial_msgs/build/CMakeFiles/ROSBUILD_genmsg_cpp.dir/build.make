@@ -45,12 +45,12 @@ CMAKE_BINARY_DIR = /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_m
 CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/rosserial_msgs/TopicInfo.h
 
 ../msg_gen/cpp/include/rosserial_msgs/TopicInfo.h: ../msg/TopicInfo.msg
-../msg_gen/cpp/include/rosserial_msgs/TopicInfo.h: /opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/scripts/genmsg_cpp.py
-../msg_gen/cpp/include/rosserial_msgs/TopicInfo.h: /opt/ros/diamondback/ros/core/roslib/scripts/gendeps
+../msg_gen/cpp/include/rosserial_msgs/TopicInfo.h: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/scripts/genmsg_cpp.py
+../msg_gen/cpp/include/rosserial_msgs/TopicInfo.h: /opt/ros/electric/ros/core/roslib/scripts/gendeps
 ../msg_gen/cpp/include/rosserial_msgs/TopicInfo.h: ../manifest.xml
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/rosserial_msgs/TopicInfo.h"
-	/opt/ros/diamondback/stacks/ros_comm/clients/cpp/roscpp/scripts/genmsg_cpp.py /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/msg/TopicInfo.msg
+	/opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/scripts/genmsg_cpp.py /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/msg/TopicInfo.msg
 
 ROSBUILD_genmsg_cpp: CMakeFiles/ROSBUILD_genmsg_cpp
 ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/rosserial_msgs/TopicInfo.h

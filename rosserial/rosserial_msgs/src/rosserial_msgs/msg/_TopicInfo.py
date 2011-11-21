@@ -63,8 +63,8 @@ string message_type
       _x = self.message_type
       length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
-    except struct.error, se: self._check_types(se)
-    except TypeError, te: self._check_types(te)
+    except struct.error as se: self._check_types(se)
+    except TypeError as te: self._check_types(te)
 
   def deserialize(self, str):
     """
@@ -90,7 +90,7 @@ string message_type
       end += length
       self.message_type = str[start:end]
       return self
-    except struct.error, e:
+    except struct.error as e:
       raise roslib.message.DeserializationError(e) #most likely buffer underfill
 
 
@@ -110,8 +110,8 @@ string message_type
       _x = self.message_type
       length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
-    except struct.error, se: self._check_types(se)
-    except TypeError, te: self._check_types(te)
+    except struct.error as se: self._check_types(se)
+    except TypeError as te: self._check_types(te)
 
   def deserialize_numpy(self, str, numpy):
     """
@@ -139,7 +139,7 @@ string message_type
       end += length
       self.message_type = str[start:end]
       return self
-    except struct.error, e:
+    except struct.error as e:
       raise roslib.message.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = roslib.message.struct_I

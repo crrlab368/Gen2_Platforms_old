@@ -3,19 +3,22 @@
 #define ROSSERIAL_MSGS_MESSAGE_TOPICINFO_H
 #include <string>
 #include <vector>
+#include <map>
 #include <ostream>
 #include "ros/serialization.h"
 #include "ros/builtin_message_traits.h"
 #include "ros/message_operations.h"
-#include "ros/message.h"
 #include "ros/time.h"
+
+#include "ros/macros.h"
+
+#include "ros/assert.h"
 
 
 namespace rosserial_msgs
 {
 template <class ContainerAllocator>
-struct TopicInfo_ : public ros::Message
-{
+struct TopicInfo_ {
   typedef TopicInfo_<ContainerAllocator> Type;
 
   TopicInfo_()
@@ -96,6 +99,7 @@ public:
 
   typedef boost::shared_ptr< ::rosserial_msgs::TopicInfo_<ContainerAllocator> > Ptr;
   typedef boost::shared_ptr< ::rosserial_msgs::TopicInfo_<ContainerAllocator>  const> ConstPtr;
+  boost::shared_ptr<std::map<std::string, std::string> > __connection_header;
 }; // struct TopicInfo
 typedef  ::rosserial_msgs::TopicInfo_<std::allocator<void> > TopicInfo;
 
@@ -115,6 +119,8 @@ namespace ros
 {
 namespace message_traits
 {
+template<class ContainerAllocator> struct IsMessage< ::rosserial_msgs::TopicInfo_<ContainerAllocator> > : public TrueType {};
+template<class ContainerAllocator> struct IsMessage< ::rosserial_msgs::TopicInfo_<ContainerAllocator>  const> : public TrueType {};
 template<class ContainerAllocator>
 struct MD5Sum< ::rosserial_msgs::TopicInfo_<ContainerAllocator> > {
   static const char* value() 

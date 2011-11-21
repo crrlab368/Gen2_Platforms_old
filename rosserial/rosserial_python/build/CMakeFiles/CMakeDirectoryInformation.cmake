@@ -11,13 +11,13 @@ SET(CMAKE_FORCE_UNIX_PATHS 1)
 # The C and CXX include file search paths:
 SET(CMAKE_C_INCLUDE_PATH
   "../include"
-  "/opt/ros/diamondback/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/cpp/include"
-  "/opt/ros/diamondback/stacks/ros_comm/messages/std_msgs/include"
-  "/opt/ros/diamondback/stacks/ros_comm/messages/std_msgs/msg_gen/cpp/include"
-  "/opt/ros/diamondback/ros/core/roslib/msg_gen/cpp/include"
-  "/opt/ros/diamondback/ros/core/roslib/include"
-  "/opt/ros/diamondback/ros/tools/rospack"
-  "/opt/ros/diamondback/ros/tools/rospack/include"
+  "/opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/cpp/include"
+  "/opt/ros/electric/stacks/ros_comm/messages/std_msgs/include"
+  "/opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/cpp/include"
+  "/opt/ros/electric/ros/core/roslib/msg_gen/cpp/include"
+  "/opt/ros/electric/ros/core/roslib/include"
+  "/opt/ros/electric/ros/tools/rospack"
+  "/opt/ros/electric/ros/tools/rospack/include"
   "/home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/msg_gen/cpp/include"
   )
 SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})

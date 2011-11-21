@@ -1,1 +1,1 @@
-from _TopicInfo import *
+from ._TopicInfo import *

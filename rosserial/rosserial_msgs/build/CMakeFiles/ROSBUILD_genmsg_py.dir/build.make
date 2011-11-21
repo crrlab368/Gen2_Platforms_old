@@ -47,15 +47,15 @@ CMakeFiles/ROSBUILD_genmsg_py: ../src/rosserial_msgs/msg/__init__.py
 ../src/rosserial_msgs/msg/__init__.py: ../src/rosserial_msgs/msg/_TopicInfo.py
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/rosserial_msgs/msg/__init__.py"
-	/opt/ros/diamondback/stacks/ros_comm/clients/rospy/scripts/genmsg_py.py --initpy /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/msg/TopicInfo.msg
+	/opt/ros/electric/stacks/ros_comm/clients/rospy/scripts/genmsg_py.py --initpy /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/msg/TopicInfo.msg
 
 ../src/rosserial_msgs/msg/_TopicInfo.py: ../msg/TopicInfo.msg
-../src/rosserial_msgs/msg/_TopicInfo.py: /opt/ros/diamondback/stacks/ros_comm/clients/rospy/scripts/genmsg_py.py
-../src/rosserial_msgs/msg/_TopicInfo.py: /opt/ros/diamondback/ros/core/roslib/scripts/gendeps
+../src/rosserial_msgs/msg/_TopicInfo.py: /opt/ros/electric/stacks/ros_comm/clients/rospy/scripts/genmsg_py.py
+../src/rosserial_msgs/msg/_TopicInfo.py: /opt/ros/electric/ros/core/roslib/scripts/gendeps
 ../src/rosserial_msgs/msg/_TopicInfo.py: ../manifest.xml
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/rosserial_msgs/msg/_TopicInfo.py"
-	/opt/ros/diamondback/stacks/ros_comm/clients/rospy/scripts/genmsg_py.py --noinitpy /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/msg/TopicInfo.msg
+	/opt/ros/electric/stacks/ros_comm/clients/rospy/scripts/genmsg_py.py --noinitpy /home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/msg/TopicInfo.msg
 
 ROSBUILD_genmsg_py: CMakeFiles/ROSBUILD_genmsg_py
 ROSBUILD_genmsg_py: ../src/rosserial_msgs/msg/__init__.py
