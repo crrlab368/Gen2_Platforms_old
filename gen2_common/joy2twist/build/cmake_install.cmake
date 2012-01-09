@@ -1,4 +1,4 @@
-# Install script for directory: /home/moe/devel/ros/Gen2_Platforms/gen2_common/joy2twist
+# Install script for directory: /home/overkill/devel/ros/Gen2_Platforms/gen2_common/joy2twist
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/moe/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/overkill/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/moe/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/overkill/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

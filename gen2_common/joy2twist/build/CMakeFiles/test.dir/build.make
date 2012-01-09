@@ -31,11 +31,14 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/moe/devel/ros/Gen2_Platforms/gen2_common/joy2twist
+CMAKE_SOURCE_DIR = /home/overkill/devel/ros/Gen2_Platforms/gen2_common/joy2twist
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/moe/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build
+CMAKE_BINARY_DIR = /home/overkill/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build
 
 # Utility rule file for test.
 
@@ -54,6 +57,6 @@ CMakeFiles/test.dir/clean:
 .PHONY : CMakeFiles/test.dir/clean
 
 CMakeFiles/test.dir/depend:
-	cd /home/moe/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/moe/devel/ros/Gen2_Platforms/gen2_common/joy2twist /home/moe/devel/ros/Gen2_Platforms/gen2_common/joy2twist /home/moe/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build /home/moe/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build /home/moe/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/overkill/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/overkill/devel/ros/Gen2_Platforms/gen2_common/joy2twist /home/overkill/devel/ros/Gen2_Platforms/gen2_common/joy2twist /home/overkill/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build /home/overkill/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build /home/overkill/devel/ros/Gen2_Platforms/gen2_common/joy2twist/build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test.dir/depend
 
