@@ -11,7 +11,7 @@ SET(CMAKE_FORCE_UNIX_PATHS 1)
 # The C and CXX include file search paths:
 SET(CMAKE_C_INCLUDE_PATH
   "../include"
-  "/opt/ros/electric/stacks/joy/msg_gen/cpp/include"
+  "/opt/ros/electric/stacks/joystick_drivers/joy/msg_gen/cpp/include"
   "/opt/ros/electric/stacks/diagnostics/diagnostic_updater/include"
   "/opt/ros/electric/stacks/common_msgs/diagnostic_msgs/msg_gen/cpp/include"
   "/opt/ros/electric/stacks/common_msgs/diagnostic_msgs/srv_gen/cpp/include"
@@ -27,7 +27,8 @@ SET(CMAKE_C_INCLUDE_PATH
   "/home/overkill/devel/ros/Gen2_Platforms/gen2_drivers/gen2_motor_driver/msg_gen/cpp/include"
   "/opt/ros/electric/stacks/orocos_kinematics_dynamics/orocos_kdl/install_dir/include"
   "/usr/local/include/eigen3"
-  "/home/overkill/devel/ros/Gen2_Platforms/rosserial/rosserial_msgs/msg_gen/cpp/include"
+  "/opt/ros/electric/stacks/rosserial/rosserial_msgs/msg_gen/cpp/include"
+  "/opt/ros/electric/stacks/rosserial/rosserial_msgs/srv_gen/cpp/include"
   "/opt/ros/electric/stacks/navigation/robot_pose_ekf/srv_gen/cpp/include"
   "/opt/ros/electric/stacks/common/bfl/include/bfl"
   "/opt/ros/electric/stacks/navigation/move_base/include"
